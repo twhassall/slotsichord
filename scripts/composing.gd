@@ -62,5 +62,7 @@ func play_bar(bar):
 		
 func _on_button_pressed():
 	var random_bar = generate_bar()
+	MusicLibrary.generated_bars.append(random_bar)
+	print (MusicLibrary.generated_bars.size())
 	print (random_bar)
 	await play_bar(random_bar)
