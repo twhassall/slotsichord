@@ -9,11 +9,11 @@ offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("1_0fbet")
 
-[node name="Button" type="Button" parent="." unique_id=798539128]
+[node name="ButtonRenamed" type="Button" parent="." unique_id=798539128]
 layout_mode = 0
 offset_right = 194.0
 offset_bottom = 179.0
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1331122139]
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="ButtonRenamed" to="." method="_on_button_pressed"]
