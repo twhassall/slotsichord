@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://g31hgro8unpx"]
+
+[ext_resource type="Script" uid="uid://b6g5iqqhyvmh" path="res://scripts/barChunk.gd" id="1_33klk"]
+
+[node name="BarChunk" type="PanelContainer" unique_id=1758219814]
+script = ExtResource("1_33klk")
+
+[node name="Label" type="Label" parent="." unique_id=1816745942]
+layout_mode = 2
+text = "Bar chunk (this will be a sprite)"

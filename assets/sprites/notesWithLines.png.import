@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b4r55jhc0gy6p"
-path="res://.godot/imported/Notes with lines.png-ff5a53ecd4f88d8fd0a22dd3b12ade7a.ctex"
+path="res://.godot/imported/notesWithLines.png-0670b8c6b5258ac36a07f031ff54bddc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Notes with lines.png"
-dest_files=["res://.godot/imported/Notes with lines.png-ff5a53ecd4f88d8fd0a22dd3b12ade7a.ctex"]
+source_file="res://assets/sprites/notesWithLines.png"
+dest_files=["res://.godot/imported/notesWithLines.png-0670b8c6b5258ac36a07f031ff54bddc.ctex"]
 
 [params]
 

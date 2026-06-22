@@ -13,6 +13,7 @@ func beat_duration():
 const NOTES = ["C", "D", "E", "G", "A", "C2"]
 
 var sounds = {}
+var current_bar = []
 
 func _ready():
 	randomize()
@@ -22,6 +23,7 @@ func _ready():
 	sounds["G"] = load("res://assets/sounds/notes/G.wav")
 	sounds["A"] = load("res://assets/sounds/notes/A.wav")
 	sounds["C2"] = load("res://assets/sounds/notes/C2.wav")
+	update_counter()
 
 func generate_beat():
 	##range affect how often certain length of notes appear. We don't want too many rests.
@@ -61,8 +63,26 @@ func play_bar(bar):
 			await get_tree().create_timer(duration * beat_duration()).timeout
 		
 func _on_button_pressed():
-	var random_bar = generate_bar()
-	MusicLibrary.generated_bars.append(random_bar)
-	print (MusicLibrary.generated_bars.size())
-	print (random_bar)
-	await play_bar(random_bar)
+	#changed this method a bit tommy - i figured maybe we want the player to spin a few times and choose one they like, rather than immeditealy appending to the MusicLibrary list
+	#so added a save button and option to play the current bar manually or re spin
+	#but happy to switch back - maybe makes more sense that you opnly get 4 spins, then have to pick based on what you randomly got!
+	current_bar = generate_bar()
+	print (current_bar)
+	await play_bar(current_bar)
+
+
+func _on_move_to_arrangement_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/actualScreens/arrangement.tscn")
+
+
+func _on_save_bar_button_pressed():
+	if current_bar.is_empty():
+		return  
+	if MusicLibrary.generated_bars.size() >= 4:
+		return  
+	MusicLibrary.generated_bars.append(current_bar)
+	current_bar = []  
+	update_counter()
+
+func update_counter():
+	$VBoxContainer/numberOfSvedBars.text = "Saved: %d / 4" % MusicLibrary.generated_bars.size()
