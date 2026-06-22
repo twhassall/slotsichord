@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://7tcf4765c75r"]
 
 [ext_resource type="Script" uid="uid://dc22lmp53bnwh" path="res://scripts/arrangement.gd" id="1_a4p01"]
+[ext_resource type="Texture2D" uid="uid://c0sj2f3u51nmi" path="res://assets/sprites/notes/whiteBackground.png" id="2_tdu7c"]
 
 [node name="Arrangement" type="Control" unique_id=133109857]
 layout_mode = 3
@@ -11,9 +12,20 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_a4p01")
 
+[node name="Background" type="TextureRect" parent="." unique_id=958784669]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_tdu7c")
+expand_mode = 1
+
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=100311411]
 layout_mode = 0
-offset_right = 40.0
+offset_right = 258.0
 offset_bottom = 40.0
 
 [node name="barArranger" type="HBoxContainer" parent="VBoxContainer" unique_id=1396397388]

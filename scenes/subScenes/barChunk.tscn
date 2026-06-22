@@ -1,10 +1,11 @@
 [gd_scene format=3 uid="uid://g31hgro8unpx"]
 
 [ext_resource type="Script" uid="uid://b6g5iqqhyvmh" path="res://scripts/barChunk.gd" id="1_33klk"]
+[ext_resource type="PackedScene" uid="uid://b6jt8ktlmgocr" path="res://scenes/subScenes/barRenderer.tscn" id="2_12j57"]
 
 [node name="BarChunk" type="PanelContainer" unique_id=1758219814]
 script = ExtResource("1_33klk")
 
-[node name="Label" type="Label" parent="." unique_id=1816745942]
+[node name="BarRenderer" parent="." unique_id=571066761 instance=ExtResource("2_12j57")]
 layout_mode = 2
-text = "Bar chunk (this will be a sprite)"
+mouse_filter = 2
