@@ -38,10 +38,10 @@ func generate_beat():
 	elif roll <=50:
 		return [["REST",CROTCHET]]
 	##Quaver note + quaver rest
-	elif roll <=70: 
+	elif roll <=60: 
 		return [[NOTES.pick_random(),QUAVER],["REST",QUAVER]]
 	##Quaver rest + quaver note
-	elif roll <=90:
+	elif roll <=70:
 		return [["REST",QUAVER],[NOTES.pick_random(),QUAVER]]
 	##Quaver note + quaver note
 	else:
