@@ -49,6 +49,22 @@ func generate_bar():
 	for i in range(4):
 		bar.append(generate_beat())
 	return bar
+	
+func beat_to_key(beat):
+	if beat.size() == 1:
+		return "crot_" + note_to_sprite_name(beat[0][0])
+	else:
+		return "quav_" + note_to_sprite_name(beat[0][0]) + note_to_sprite_name(beat[1][0])
+		
+func note_to_sprite_name(note):
+	match note:
+		"C": return "c"
+		"D": return "d"
+		"E": return "e"
+		"G": return "g"
+		"A": return "a"
+		"C2": return "c2"
+		"REST": return "r"
 
 func play_bar(bar):
 	for beat in bar:

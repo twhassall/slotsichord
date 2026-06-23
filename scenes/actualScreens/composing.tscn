@@ -17,7 +17,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 alignment = 1
 
-[node name="Eventually Crank" type="Button" parent="VBoxContainer" unique_id=798539128]
+[node name="makeMelody(crank)" type="Button" parent="VBoxContainer" unique_id=798539128]
 layout_mode = 2
 text = "Create a melody!"
 
@@ -32,6 +32,6 @@ text = "save this bar!"
 [node name="numberOfSvedBars" type="Label" parent="VBoxContainer" unique_id=878918778]
 layout_mode = 2
 
-[connection signal="pressed" from="VBoxContainer/Eventually Crank" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/makeMelody(crank)" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/moveToArrangement" to="." method="_on_move_to_arrangement_pressed"]
 [connection signal="pressed" from="VBoxContainer/saveBarButton" to="." method="_on_save_bar_button_pressed"]
