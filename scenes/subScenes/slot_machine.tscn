@@ -15,25 +15,33 @@ position = Vector2(339, 326)
 scale = Vector2(4.25817, 4.2581697)
 texture = ExtResource("2_st2x8")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1401871415]
+[node name="Reel1" type="TextureRect" parent="." unique_id=1036060400]
 layout_mode = 0
-offset_left = 48.000004
-offset_top = 178.0
-offset_right = 88.0
-offset_bottom = 218.0
-scale = Vector2(3.5, 3.5)
+offset_left = 37.0
+offset_top = 170.5
+offset_right = 147.0
+offset_bottom = 329.5
 
-[node name="Reel1" type="TextureRect" parent="HBoxContainer" unique_id=1036060400]
-layout_mode = 2
+[node name="Reel2" type="TextureRect" parent="." unique_id=58768783]
+layout_mode = 0
+offset_left = 152.0
+offset_top = 170.5
+offset_right = 262.0
+offset_bottom = 329.5
 
-[node name="Reel2" type="TextureRect" parent="HBoxContainer" unique_id=58768783]
-layout_mode = 2
+[node name="Reel3" type="TextureRect" parent="." unique_id=1011471942]
+layout_mode = 0
+offset_left = 267.0
+offset_top = 170.5
+offset_right = 377.0
+offset_bottom = 329.5
 
-[node name="Reel3" type="TextureRect" parent="HBoxContainer" unique_id=1011471942]
-layout_mode = 2
-
-[node name="Reel4" type="TextureRect" parent="HBoxContainer" unique_id=1294516516]
-layout_mode = 2
+[node name="Reel4" type="TextureRect" parent="." unique_id=1294516516]
+layout_mode = 0
+offset_left = 382.0
+offset_top = 171.0
+offset_right = 492.0
+offset_bottom = 330.0
 
 [node name="Spin" type="Button" parent="." unique_id=2136534447]
 layout_mode = 0

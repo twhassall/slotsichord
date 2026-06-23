@@ -1,9 +1,9 @@
 extends Control
 
-@onready var reel1 = $HBoxContainer/Reel1
-@onready var reel2 = $HBoxContainer/Reel2
-@onready var reel3 = $HBoxContainer/Reel3
-@onready var reel4 = $HBoxContainer/Reel4
+@onready var reel1 = $Reel1
+@onready var reel2 = $Reel2
+@onready var reel3 = $Reel3
+@onready var reel4 = $Reel4
 
 var beat_sprites = {}
 var current_bar = []
