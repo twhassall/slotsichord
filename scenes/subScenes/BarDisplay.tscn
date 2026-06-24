@@ -9,8 +9,9 @@ border_color = Color(0, 0, 0, 1)
 
 [node name="BarArea" type="PanelContainer" unique_id=1773127405]
 offset_left = 224.0
-offset_right = 224.0
-offset_bottom = 648.0
+offset_right = 328.0
+offset_bottom = 44.0
+size_flags_vertical = 4
 theme_override_styles/panel = SubResource("StyleBoxFlat_xq6yc")
 script = ExtResource("1_dcwuo")
 

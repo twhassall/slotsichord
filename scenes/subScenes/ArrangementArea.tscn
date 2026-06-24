@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://g7nmx3jsyfp4"]
+
+[ext_resource type="Script" uid="uid://b3n7u1kht32pk" path="res://scripts/arrangement_area.gd" id="1_t53rw"]
+
+[node name="ArrangementArea" type="Control" unique_id=2060967160]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_t53rw")
+
+[node name="Lines" type="VBoxContainer" parent="." unique_id=1613665150]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0

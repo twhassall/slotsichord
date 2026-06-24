@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://but188dhkcmpn"]
+
+[ext_resource type="Script" uid="uid://dtfsrppg6uquv" path="res://scripts/bar_slot.gd" id="1_2b17l"]
+
+[node name="BarSlot" type="Control" unique_id=1345478310]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2b17l")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1227399977]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
