@@ -5,6 +5,8 @@ extends Control
 @onready var reel3 = $Reel3
 @onready var reel4 = $Reel4
 
+@onready var barOuputarea = $BarOutputArea
+
 var beat_sprites = {}
 var current_bar = []
 var spinSound
@@ -107,6 +109,7 @@ func spin_all_reels(bar):
 	await MusicLibrary.play_beat(bar[2])
 	await spin_reel(reel4, key4)
 	await MusicLibrary.play_beat(bar[3])
+	render_bar(current_bar)
 
 func _on_spin_pressed():
 	current_bar = MusicLibrary.generate_bar()
@@ -118,3 +121,15 @@ func _on_spin_pressed():
 	await get_tree().create_timer(0.5).timeout
 	await MusicLibrary.play_bar(current_bar)
 	print (current_bar)
+	
+func render_bar(bar):
+	var sprites = []
+	for beat in bar:
+		var sprite_key = MusicLibrary.beat_to_key(beat)
+		sprites.append(beat_sprites[sprite_key])
+		
+	var bar_scene = load("res://scenes/subScenes/BarDisplay.tscn")
+	var bar_node = bar_scene.instantiate()
+	barOuputarea.add_child(bar_node)
+	bar_node.set_textures(sprites)
+	

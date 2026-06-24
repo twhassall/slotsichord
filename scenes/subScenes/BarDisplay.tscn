@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://drmjfhrp4jtan"]
+
+[ext_resource type="Script" uid="uid://dgsba42rhxx8u" path="res://scripts/BarArea.gd" id="1_dcwuo"]
+[ext_resource type="Texture2D" uid="uid://cxvo08agtvmux" path="res://assets/sprites/stave.png" id="2_xq6yc"]
+
+[node name="BarArea" type="PanelContainer" unique_id=1773127405]
+offset_left = 224.0
+offset_right = 224.0
+offset_bottom = 648.0
+script = ExtResource("1_dcwuo")
+
+[node name="SpecificBar" type="HBoxContainer" parent="." unique_id=15783650]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Beat1" type="TextureRect" parent="SpecificBar" unique_id=1106722842]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+texture = ExtResource("2_xq6yc")
+stretch_mode = 5
+
+[node name="Note" type="TextureRect" parent="SpecificBar/Beat1" unique_id=1381004104]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+stretch_mode = 2
+
+[node name="Beat2" type="TextureRect" parent="SpecificBar" unique_id=1749123542]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+texture = ExtResource("2_xq6yc")
+stretch_mode = 5
+
+[node name="Note" type="TextureRect" parent="SpecificBar/Beat2" unique_id=1944635213]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+stretch_mode = 2
+
+[node name="Beat3" type="TextureRect" parent="SpecificBar" unique_id=115864664]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+texture = ExtResource("2_xq6yc")
+stretch_mode = 5
+
+[node name="Note" type="TextureRect" parent="SpecificBar/Beat3" unique_id=1816651002]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+stretch_mode = 2
+
+[node name="Beat4" type="TextureRect" parent="SpecificBar" unique_id=968766929]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+texture = ExtResource("2_xq6yc")
+stretch_mode = 5
+
+[node name="Note" type="TextureRect" parent="SpecificBar/Beat4" unique_id=384097721]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+stretch_mode = 2
