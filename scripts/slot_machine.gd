@@ -12,7 +12,10 @@ var spinSound
 var player: AudioStreamPlayer
 
 func _ready():
-	
+	##for random smoke animation
+	randomize()
+	smoke_loop()
+
 	player = AudioStreamPlayer.new()
 	add_child(player)
 	
@@ -22,7 +25,7 @@ func _ready():
 	for i in range(5):
 		
 		render_bar(MusicLibrary.generate_bar())
-	
+
 func random_sprite_key():
 	return MusicLibrary.beat_sprites.keys().pick_random()
 	
@@ -34,7 +37,6 @@ func spin_reel(reel, final_key):
 		await get_tree().create_timer(0.05).timeout
 	reel.texture = MusicLibrary.beat_sprites[final_key]
 	player.stop()
-	
 	
 func spin_all_reels(bar):
 	var key1 = MusicLibrary.beat_to_key(bar[0])
@@ -72,3 +74,7 @@ func render_bar(bar):
 	bar_node.set_textures(sprites)
 	bar_node.set_bar(bar)
 	
+func smoke_loop():
+	while true:
+		await get_tree().create_timer(randf_range(2.0, 8.0)).timeout
+		$SlotMachine/CiggySmoke/CiggyAnimation.play("smoke1")

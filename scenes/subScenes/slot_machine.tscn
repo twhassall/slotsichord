@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://u4yqnvewcb63" path="res://scripts/slot_machine.gd" id="1_f0c0l"]
 [ext_resource type="Texture2D" uid="uid://cpj8dgkgq0x4d" path="res://assets/sprites/slot_machine.png" id="2_ava31"]
 [ext_resource type="Texture2D" uid="uid://dngtl16blxy04" path="res://assets/sprites/LeverSpriteSheet.png" id="3_r8ptc"]
+[ext_resource type="Texture2D" uid="uid://cayws40w4atsk" path="res://assets/sprites/smoke.png" id="4_r8ptc"]
 
 [sub_resource type="Animation" id="Animation_ava31"]
 resource_name = "Pull"
@@ -41,6 +42,60 @@ _data = {
 &"RESET": SubResource("Animation_r8ptc")
 }
 
+[sub_resource type="Animation" id="Animation_0xq38"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SlotMachine/CiggySmoke:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_degk7"]
+resource_name = "smoke1"
+length = 4.133333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SlotMachine/CiggySmoke:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 2.8333333, 2.9333334, 3.0333333, 3.1333332, 3.2333333, 3.3333333, 3.4333334, 3.5333333, 3.6333332, 3.7333336, 3.8333335),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 17, 18, 19, 20, 21, 22, 23, 0]
+}
+
+[sub_resource type="Animation" id="Animation_pt82j"]
+resource_name = "smoke2"
+length = 2.5666666
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SlotMachine/CiggySmoke:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6, 1.8, 2, 2.2, 2.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 12]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lq40k"]
+_data = {
+&"RESET": SubResource("Animation_0xq38"),
+&"smoke1": SubResource("Animation_degk7"),
+&"smoke2": SubResource("Animation_pt82j")
+}
+
 [node name="SlotMachine" type="Control" unique_id=1553664927]
 layout_mode = 3
 anchors_preset = 0
@@ -61,6 +116,16 @@ hframes = 6
 [node name="CrankAnimation" type="AnimationPlayer" parent="SlotMachine/Crank" unique_id=1521356991]
 root_node = NodePath("../../..")
 libraries/ = SubResource("AnimationLibrary_0xq38")
+
+[node name="CiggySmoke" type="Sprite2D" parent="SlotMachine" unique_id=109417282]
+position = Vector2(23.719, 6.904)
+texture = ExtResource("4_r8ptc")
+hframes = 12
+vframes = 2
+
+[node name="CiggyAnimation" type="AnimationPlayer" parent="SlotMachine/CiggySmoke" unique_id=666382503]
+root_node = NodePath("../../..")
+libraries/ = SubResource("AnimationLibrary_lq40k")
 
 [node name="Reel1" type="TextureRect" parent="." unique_id=1036060400]
 layout_mode = 0
