@@ -15,3 +15,14 @@ func set_bar(bar):
 func set_textures(sprites):
 	for i in range(4):
 		note_rects[i].texture = sprites[i]
+
+func _get_drag_data(at_position):
+	#da data
+	var data = bar_data
+
+	#da ghost
+	var ghost = duplicate()
+	set_drag_preview(ghost)
+
+	#give data
+	return data
