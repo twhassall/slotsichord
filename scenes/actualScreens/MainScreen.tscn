@@ -10,6 +10,9 @@ offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("1_hhyys")
 
+[node name="Camera2D" type="Camera2D" parent="." unique_id=883540345]
+position = Vector2(730, 324)
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1331122139]
 
 [node name="VBoxContainer" type="HBoxContainer" parent="." unique_id=2079293691]
