@@ -54,7 +54,7 @@ scale = Vector2(4.25817, 4.2581697)
 texture = ExtResource("2_ava31")
 
 [node name="Crank" type="Sprite2D" parent="SlotMachine" unique_id=1823926421]
-position = Vector2(45.794323, -13.62088)
+position = Vector2(55.188026, -14.090558)
 texture = ExtResource("3_r8ptc")
 hframes = 6
 
@@ -64,31 +64,31 @@ libraries/ = SubResource("AnimationLibrary_0xq38")
 
 [node name="Reel1" type="TextureRect" parent="." unique_id=1036060400]
 layout_mode = 0
-offset_left = 37.0
-offset_top = 170.5
-offset_right = 147.0
-offset_bottom = 329.5
+offset_left = 75.0
+offset_top = 171.0
+offset_right = 185.0
+offset_bottom = 330.0
 
 [node name="Reel2" type="TextureRect" parent="." unique_id=58768783]
 layout_mode = 0
-offset_left = 152.0
-offset_top = 170.5
-offset_right = 262.0
-offset_bottom = 329.5
+offset_left = 190.0
+offset_top = 171.0
+offset_right = 300.0
+offset_bottom = 330.0
 
 [node name="Reel3" type="TextureRect" parent="." unique_id=1011471942]
 layout_mode = 0
-offset_left = 267.0
-offset_top = 170.5
-offset_right = 377.0
-offset_bottom = 329.5
+offset_left = 305.0
+offset_top = 171.0
+offset_right = 415.0
+offset_bottom = 330.0
 
 [node name="Reel4" type="TextureRect" parent="." unique_id=1294516516]
 layout_mode = 0
-offset_left = 382.0
-offset_top = 171.0
-offset_right = 492.0
-offset_bottom = 330.0
+offset_left = 420.0
+offset_top = 171.5
+offset_right = 530.0
+offset_bottom = 330.5
 
 [node name="Spin" type="Button" parent="." unique_id=2136534447]
 modulate = Color(1, 1, 1, 0)
