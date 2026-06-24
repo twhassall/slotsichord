@@ -71,17 +71,21 @@ func note_to_sprite_name(note):
 		
 func play_bar(bar):
 	for beat in bar:
-		for note in beat:
-			var pitch = note[0]
-			var duration = note[1]
-			
-			if pitch != "REST":
-				player.stream = sounds[pitch]
-				player.play()
-				
-			await get_tree().create_timer(duration * beat_duration()).timeout
+		await play_beat(beat)
 
 func play_bars(bars):
 	for bar in bars:
 		print (bar)
 		await play_bar(bar)
+		
+func play_beat(beat):
+	for note in beat:
+		play_note(note)
+		var duration = note[1]
+		await get_tree().create_timer(duration * beat_duration()).timeout
+		
+func play_note(note):
+		var pitch = note[0]
+		if pitch != "REST":
+			player.stream = sounds[pitch]
+			player.play()

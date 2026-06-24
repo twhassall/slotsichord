@@ -7,8 +7,16 @@ extends Control
 
 var beat_sprites = {}
 var current_bar = []
+var spinSound
+var player: AudioStreamPlayer
 
 func _ready():
+	
+	player = AudioStreamPlayer.new()
+	add_child(player)
+	
+	spinSound = load("res://assets/sounds/slotMachineSpin.wav")
+	
 	beat_sprites["crot_c"] = load("res://assets/sprites/SLOTMACHINEnotes/crot_c.png")
 	beat_sprites["crot_d"] = load("res://assets/sprites/SLOTMACHINEnotes/crot_d.png")
 	beat_sprites["crot_e"] = load("res://assets/sprites/SLOTMACHINEnotes/crot_e.png")
@@ -76,21 +84,29 @@ func random_sprite_key():
 	return beat_sprites.keys().pick_random()
 	
 func spin_reel(reel, final_key):
+	player.stream = spinSound
+	player.play()
 	for i in range(20):
 		reel.texture = beat_sprites[random_sprite_key()]
 		await get_tree().create_timer(0.05).timeout
 	reel.texture = beat_sprites[final_key]
+	player.stop()
 	
-func spin_all_reels(beat):
-	var key1 = MusicLibrary.beat_to_key(beat[0])
-	var key2 = MusicLibrary.beat_to_key(beat[1])
-	var key3 = MusicLibrary.beat_to_key(beat[2])
-	var key4 = MusicLibrary.beat_to_key(beat[3])
 	
+func spin_all_reels(bar):
+	var key1 = MusicLibrary.beat_to_key(bar[0])
+	var key2 = MusicLibrary.beat_to_key(bar[1])
+	var key3 = MusicLibrary.beat_to_key(bar[2])
+	var key4 = MusicLibrary.beat_to_key(bar[3])
+
 	await spin_reel(reel1, key1)
+	await MusicLibrary.play_beat(bar[0])
 	await spin_reel(reel2, key2)
+	await MusicLibrary.play_beat(bar[1])
 	await spin_reel(reel3, key3)
+	await MusicLibrary.play_beat(bar[2])
 	await spin_reel(reel4, key4)
+	await MusicLibrary.play_beat(bar[3])
 
 func _on_spin_pressed():
 	current_bar = MusicLibrary.generate_bar()
