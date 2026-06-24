@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c28c24nmyahh5" path="res://scripts/composing.gd" id="1_hhyys"]
 [ext_resource type="PackedScene" uid="uid://djv1omxsji6f1" path="res://scenes/subScenes/slot_machine.tscn" id="2_2t3k2"]
+[ext_resource type="Texture2D" uid="uid://c0sj2f3u51nmi" path="res://assets/sprites/notes/whiteBackground.png" id="2_gbfyh"]
 
 [node name="Composing" type="Control" unique_id=1775278082]
 layout_mode = 3
@@ -9,6 +10,19 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("1_hhyys")
+
+[node name="Background" type="TextureRect" parent="." unique_id=1786546481]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1112.0
+offset_bottom = 608.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_gbfyh")
+expand_mode = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1331122139]
 
