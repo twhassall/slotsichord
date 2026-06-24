@@ -20,7 +20,9 @@ var downSprite
 var cSprite
 var restSprite
 var quaverRestSprite
-
+var upQuaverSprite
+var downQuaverSprite
+var cQuaverSprite
 
 
 const STAVE_COLOR = Color(0.0, 0.0, 0.0, 1.0)
@@ -28,6 +30,9 @@ func _ready():
 	upSprite = load("res://assets/sprites/notes/leftNote.png")
 	downSprite= load("res://assets/sprites/notes/rightNote.png")
 	cSprite = load("res://assets/sprites/notes/cNote.png")
+	upQuaverSprite = load("res://assets/sprites/notes/leftNoteQuaver.png")
+	downQuaverSprite= load("res://assets/sprites/notes/rightNoteQuaver.png")
+	cQuaverSprite = load("res://assets/sprites/notes/cNoteQuaver.png")
 	restSprite = load("res://assets/sprites/notes/fullRest.png")
 	quaverRestSprite = load("res://assets/sprites/notes/halfRest.png")
 	
@@ -72,22 +77,30 @@ func _draw():
 				_draw_rest(x,stave_middle,length)
 			else:
 				var y = stave_middle - NOTESPLACES[pitch] * STEP
-				_draw_note_sprite(x,y, pitch)
+				_draw_note_sprite(x,y, pitch,length)
 			time += length
 
 #draw the sprites
-func _draw_note_sprite(x,y, pitch):
+func _draw_note_sprite(x,y, pitch,length):
 	var sprite
 	var centre
 	if pitch == "C":
-		sprite =cSprite
+		if length == 1.0:
+			sprite =cSprite
+		else:
+			sprite = cQuaverSprite
 		centre =C
-		
 	elif NOTESPLACES[pitch] > 0: 
-		sprite =downSprite
+		if length == 1.0:
+			sprite =downSprite
+		else:
+			sprite = downQuaverSprite
 		centre =DOWN
 	else:                               
-		sprite =upSprite
+		if length == 1.0:
+			sprite =upSprite
+		else:
+			sprite = upQuaverSprite
 		centre =UP
 	draw_texture(sprite, Vector2(x,y) - centre)
 
