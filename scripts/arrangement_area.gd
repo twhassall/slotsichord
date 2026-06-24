@@ -3,6 +3,7 @@ extends Control
 
 
 @onready var lines_container = $Lines
+@onready var bpm_label = $BPMSlider/BPMLabel
 var slots = []
 
 func _ready():
@@ -16,6 +17,7 @@ func _ready():
 		
 		#add this as a child of our container
 		lines_container.add_child(line)
+		bpm_label.text = str(MusicLibrary.bpm)
 
 		
 		var line_slots = []
@@ -44,3 +46,7 @@ func play_all_bars():
 
 func _on_play_pressed():
 	play_all_bars()
+
+func _on_h_slider_value_changed(value: float):
+	MusicLibrary.bpm = value
+	bpm_label.text = str(value)

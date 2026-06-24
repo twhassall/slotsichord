@@ -26,4 +26,24 @@ offset_right = 318.0
 offset_bottom = 429.0
 text = "Play!"
 
+[node name="BPMSlider" type="HSlider" parent="." unique_id=65646243]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 551.0
+offset_right = 397.0
+offset_bottom = 572.0
+min_value = 50.0
+max_value = 250.0
+value = 50.0
+rounded = true
+
+[node name="BPMLabel" type="Label" parent="BPMSlider" unique_id=1373176318]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 19.0
+offset_right = 51.0
+offset_bottom = 42.0
+
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
+[connection signal="changed" from="BPMSlider" to="." method="_on_h_slider_changed"]
+[connection signal="value_changed" from="BPMSlider" to="." method="_on_h_slider_value_changed"]

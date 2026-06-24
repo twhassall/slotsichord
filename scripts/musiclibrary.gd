@@ -159,5 +159,6 @@ func play_beat(beat):
 func play_note(note):
 		var pitch = note[0]
 		if pitch != "REST":
+			print(sounds[pitch])
 			player.stream = sounds[pitch]
 			player.play()
