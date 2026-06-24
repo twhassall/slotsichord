@@ -82,6 +82,11 @@ func _ready():
 	beat_sprites["quav_ra"] = load("res://assets/sprites/SLOTMACHINEnotes/quav_ra.png")
 	beat_sprites["quav_rc2"] = load("res://assets/sprites/SLOTMACHINEnotes/quav_rc2.png")
 	
+	#test code - REMOVE THIS
+	for i in range(5):
+		
+		render_bar(MusicLibrary.generate_bar())
+	
 func random_sprite_key():
 	return beat_sprites.keys().pick_random()
 	
@@ -132,4 +137,6 @@ func render_bar(bar):
 	var bar_node = bar_scene.instantiate()
 	barOuputarea.add_child(bar_node)
 	bar_node.set_textures(sprites)
+	
+	bar_node.set_bar(bar)
 	

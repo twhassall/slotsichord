@@ -3,10 +3,15 @@
 [ext_resource type="Script" uid="uid://dgsba42rhxx8u" path="res://scripts/BarArea.gd" id="1_dcwuo"]
 [ext_resource type="Texture2D" uid="uid://cxvo08agtvmux" path="res://assets/sprites/stave.png" id="2_xq6yc"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xq6yc"]
+bg_color = Color(0.6, 0.6, 0.6, 0.25490198)
+border_color = Color(0, 0, 0, 1)
+
 [node name="BarArea" type="PanelContainer" unique_id=1773127405]
 offset_left = 224.0
 offset_right = 224.0
 offset_bottom = 648.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_xq6yc")
 script = ExtResource("1_dcwuo")
 
 [node name="SpecificBar" type="HBoxContainer" parent="." unique_id=15783650]

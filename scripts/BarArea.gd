@@ -1,5 +1,10 @@
 extends PanelContainer
 
+var bar_data = []
+
+func set_bar(bar):
+	bar_data = bar
+
 @onready var note_rects = [
 	$SpecificBar/Beat1/Note,
 	$SpecificBar/Beat2/Note,

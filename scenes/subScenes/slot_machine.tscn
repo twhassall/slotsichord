@@ -100,9 +100,9 @@ offset_bottom = 154.0
 
 [node name="BarOutputArea" type="HFlowContainer" parent="." unique_id=498840211]
 layout_mode = 0
-offset_left = 52.0
-offset_top = 443.0
-offset_right = 603.0
-offset_bottom = 652.0
+offset_left = 84.0
+offset_top = 457.0
+offset_right = 529.0
+offset_bottom = 589.0
 
 [connection signal="pressed" from="Spin" to="." method="_on_spin_pressed"]
