@@ -112,6 +112,7 @@ func _on_spin_pressed():
 	current_bar = MusicLibrary.generate_bar()
 	MusicLibrary.current_bar = current_bar
 	##visual
+	$SlotMachine/Crank/CrankAnimation.play("Pull")
 	await spin_all_reels(current_bar)
 	##audio
 	await MusicLibrary.play_bar(current_bar)
