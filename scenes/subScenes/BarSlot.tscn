@@ -2,13 +2,20 @@
 
 [ext_resource type="Script" uid="uid://dtfsrppg6uquv" path="res://scripts/bar_slot.gd" id="1_2b17l"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0xq38"]
+bg_color = Color(0, 0, 0, 0.12156863)
+border_width_left = 2
+border_color = Color(0, 0, 0, 1)
+anti_aliasing = false
+
 [node name="BarSlot" type="PanelContainer" unique_id=79171669]
-custom_minimum_size = Vector2(80, 50)
+custom_minimum_size = Vector2(106, 50)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_0xq38")
 script = ExtResource("1_2b17l")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1227399977]

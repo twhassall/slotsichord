@@ -9,6 +9,11 @@ func _ready():
 	for line_index in range(4):
 		#create a 'line' box
 		var line = HBoxContainer.new()
+		#change the spacing of the newly made box so lines merge together properly
+		
+		#todo borders
+		line.add_theme_constant_override("separation", 0)
+		
 		#add this as a child of our container
 		lines_container.add_child(line)
 
