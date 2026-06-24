@@ -115,5 +115,6 @@ func _on_spin_pressed():
 	$SlotMachine/Crank/CrankAnimation.play("Pull")
 	await spin_all_reels(current_bar)
 	##audio
+	await get_tree().create_timer(0.5).timeout
 	await MusicLibrary.play_bar(current_bar)
 	print (current_bar)
