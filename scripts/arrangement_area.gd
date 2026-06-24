@@ -31,3 +31,16 @@ func _ready():
 		
 		#add a ref to all the slots so we can play through them all
 		slots.append(line_slots)
+
+func play_all_bars():
+	for line in slots:
+		for bit in  line:
+			var bar = bit.get_bar_data()
+			#we can change this - currently just skips empty bars
+			if bar.is_empty():
+				continue
+			await MusicLibrary.play_bar(bar)
+
+
+func _on_play_pressed():
+	play_all_bars()

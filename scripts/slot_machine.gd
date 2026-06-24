@@ -66,7 +66,7 @@ func _on_spin_pressed():
 func render_bar(bar):
 	var sprites = MusicLibrary.bar_to_sprites(bar)
 
-	var bar_scene = load("res://scenes/subScenes/BarDisplay.tscn")
+	var bar_scene = load("res://scenes/subScenes/BarArea.tscn")
 	var bar_node = bar_scene.instantiate()
 	barOuputarea.add_child(bar_node)
 	bar_node.set_textures(sprites)
