@@ -64,8 +64,8 @@ func drop_chord(data):
 	var chord_name = data["chord_name"]
 	print("chord dropped" + chord_name)
 	current_chord = chord_name
-	chord_label.text = chord_name
+	chord_label.texture = MusicLibrary.chord_sprites[chord_name]
 
 func _clear_existing_chord():
 	current_chord = ""
-	chord_label.text = ""
+	chord_label.texture = null

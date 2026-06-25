@@ -383,12 +383,13 @@ layout_mode = 0
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_left = 85.0
+offset_left = 95.0
 offset_top = 555.0
-offset_right = 85.0
+offset_right = 95.0
 offset_bottom = 555.0
 grow_horizontal = 1
 grow_vertical = 1
+scale = Vector2(2, 2)
 chord_name = "A"
 
 [node name="CChord" parent="." unique_id=1545176320 instance=ExtResource("8_lq40k")]
@@ -396,24 +397,26 @@ layout_mode = 0
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_left = 150.0
+offset_left = 160.0
 offset_top = 555.0
-offset_right = 150.0
+offset_right = 160.0
 offset_bottom = 555.0
 grow_horizontal = 1
 grow_vertical = 1
+scale = Vector2(2, 2)
 
 [node name="DChord" parent="." unique_id=448593176 instance=ExtResource("8_lq40k")]
 layout_mode = 0
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_left = 215.0
+offset_left = 225.0
 offset_top = 555.0
-offset_right = 215.0
+offset_right = 225.0
 offset_bottom = 555.0
 grow_horizontal = 1
 grow_vertical = 1
+scale = Vector2(2, 2)
 chord_name = "D"
 
 [node name="EChord" parent="." unique_id=1773000352 instance=ExtResource("8_lq40k")]
@@ -421,12 +424,13 @@ layout_mode = 0
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_left = 280.0
+offset_left = 290.0
 offset_top = 555.0
-offset_right = 280.0
+offset_right = 290.0
 offset_bottom = 555.0
 grow_horizontal = 1
 grow_vertical = 1
+scale = Vector2(2, 2)
 chord_name = "E"
 
 [node name="FChord" parent="." unique_id=418968781 instance=ExtResource("8_lq40k")]
@@ -434,12 +438,13 @@ layout_mode = 0
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_left = 345.0
+offset_left = 355.0
 offset_top = 555.0
-offset_right = 345.0
+offset_right = 355.0
 offset_bottom = 555.0
 grow_horizontal = 1
 grow_vertical = 1
+scale = Vector2(2, 2)
 chord_name = "F"
 
 [node name="GChord" parent="." unique_id=2086906863 instance=ExtResource("8_lq40k")]
@@ -447,12 +452,13 @@ layout_mode = 0
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_left = 410.0
+offset_left = 420.0
 offset_top = 555.0
-offset_right = 410.0
+offset_right = 420.0
 offset_bottom = 555.0
 grow_horizontal = 1
 grow_vertical = 1
+scale = Vector2(2, 2)
 chord_name = "G"
 
 [connection signal="pressed" from="Spin" to="." method="_on_spin_pressed"]
