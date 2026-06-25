@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://bhrvjsy3gkejy"
-path="res://.godot/imported/slotMachineSpin.wav-29b9d986d3c4f971c2447b622066bd92.sample"
+path="res://.godot/imported/slotMachineSpin.wav-2a48a17668ff5ca899f67a3b1ec3db97.sample"
 
 [deps]
 
-source_file="res://assets/sounds/slotMachineSpin.wav"
-dest_files=["res://.godot/imported/slotMachineSpin.wav-29b9d986d3c4f971c2447b622066bd92.sample"]
+source_file="res://assets/sounds/slotMachine/slotMachineSpin.wav"
+dest_files=["res://.godot/imported/slotMachineSpin.wav-2a48a17668ff5ca899f67a3b1ec3db97.sample"]
 
 [params]
 

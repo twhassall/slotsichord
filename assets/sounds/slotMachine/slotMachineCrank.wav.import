@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://cmoyf4u5rd63s"
-path="res://.godot/imported/slotMachineCrank.wav-58773a33e6d902d5c900ceeb0ccced95.sample"
+path="res://.godot/imported/slotMachineCrank.wav-fa9bb4071fd6ce01be32b7b3d06e95a4.sample"
 
 [deps]
 
-source_file="res://assets/sounds/slotMachineCrank.wav"
-dest_files=["res://.godot/imported/slotMachineCrank.wav-58773a33e6d902d5c900ceeb0ccced95.sample"]
+source_file="res://assets/sounds/slotMachine/slotMachineCrank.wav"
+dest_files=["res://.godot/imported/slotMachineCrank.wav-fa9bb4071fd6ce01be32b7b3d06e95a4.sample"]
 
 [params]
 

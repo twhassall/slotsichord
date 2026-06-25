@@ -5,6 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://du2a0mra61e30" path="res://assets/sprites/performance/stage.png" id="3_pbtqv"]
 [ext_resource type="Texture2D" uid="uid://dh0knomf4mibe" path="res://assets/sprites/performance/musicStand.png" id="4_ynhj5"]
 [ext_resource type="PackedScene" uid="uid://cehonte1e660c" path="res://scenes/subScenes/audience.tscn" id="5_kfj3j"]
+[ext_resource type="AudioStream" uid="uid://bfch551tvn7bh" path="res://assets/sounds/performance/cheer.wav" id="6_kfhwx"]
+[ext_resource type="AudioStream" uid="uid://3mbjbwbani12" path="res://assets/sounds/performance/clap.wav" id="7_scuq5"]
+[ext_resource type="AudioStream" uid="uid://brdw3ac3lpxo1" path="res://assets/sounds/performance/cricket.wav" id="8_ef5wx"]
 
 [sub_resource type="Animation" id="Animation_c5t8m"]
 length = 0.8
@@ -107,5 +110,14 @@ scale = Vector2(4, 4)
 [node name="Audience7" parent="." unique_id=465522500 instance=ExtResource("5_kfj3j")]
 position = Vector2(247, 585)
 scale = Vector2(4, 4)
+
+[node name="cheerSound" type="AudioStreamPlayer" parent="." unique_id=1908807823]
+stream = ExtResource("6_kfhwx")
+
+[node name="clapSound" type="AudioStreamPlayer" parent="." unique_id=876641958]
+stream = ExtResource("7_scuq5")
+
+[node name="cricketSound" type="AudioStreamPlayer" parent="." unique_id=1525729023]
+stream = ExtResource("8_ef5wx")
 
 [connection signal="pressed" from="MakeHerMove" to="." method="_on_make_her_move_pressed"]
