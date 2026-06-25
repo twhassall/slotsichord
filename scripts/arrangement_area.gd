@@ -41,15 +41,26 @@ func _ready():
 
 func play_all_bars():
 	for line in slots:
-		for bit in  line:
+		for bit in line:
 			var bar = bit.get_bar_data()
+			var chord = bit.current_chord
 			#we can change this - currently just skips empty bars
-			if bar.is_empty():
+			if bar.is_empty() and chord == "":
 				continue
-			await MusicLibrary.play_bar(bar)
+				
+			if chord != "":
+				MusicLibrary.play_chord(chord)
+			
+			#time based on bpm just pause if no bar
+			#adjust the chord sound itself if chord sound isnt long enough
+			if bar.is_empty():
+				await get_tree().create_timer(MusicLibrary.beat_duration() * 4).timeout
+			else:	
+				await MusicLibrary.play_bar(bar)
 
 
-func _on_preview_pressed():
+func _on_play_pressed():
+	print("playing all bars")
 	play_all_bars()
 
 func _on_h_slider_value_changed(value: float):

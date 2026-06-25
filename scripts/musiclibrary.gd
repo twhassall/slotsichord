@@ -20,10 +20,13 @@ var beat_sprites = {}
 var chord_sprites = {}
 var current_bar = []
 var player: AudioStreamPlayer
+var chord_player: AudioStreamPlayer
 
 func _ready():
 	player = AudioStreamPlayer.new()
 	add_child(player)
+	chord_player = AudioStreamPlayer.new()
+	add_child(chord_player)
 	sounds["C"]  = load("res://assets/sounds/notes/C.wav")
 	sounds["D"]  = load("res://assets/sounds/notes/D.wav")
 	sounds["E"]  = load("res://assets/sounds/notes/E.wav")
@@ -183,5 +186,5 @@ func play_note(note):
 			player.play()
 
 func play_chord(chord_name):
-	player.stream = chord_sounds[chord_name]
-	player.play()
+	chord_player.stream = chord_sounds[chord_name]
+	chord_player.play()
