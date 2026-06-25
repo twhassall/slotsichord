@@ -6,6 +6,8 @@ func _ready():
 func _on_make_her_move_pressed():
 	$Juniper/JuniperAnimation.play("conduct")
 	
+	#Conduct and play - then cheer etc
+	
 	var cheer_count = 0
 	var clap_count = 0
 	var cricket_count = 0

@@ -15,7 +15,9 @@ func beat_duration():
 const NOTES = ["C", "D", "E", "G", "A", "C2"]
 
 var sounds = {}
+var chord_sounds = {}
 var beat_sprites = {}
+var chord_sprites = {}
 var current_bar = []
 var player: AudioStreamPlayer
 
@@ -28,6 +30,13 @@ func _ready():
 	sounds["G"]  = load("res://assets/sounds/notes/G.wav")
 	sounds["A"]  = load("res://assets/sounds/notes/A.wav")
 	sounds["C2"] = load("res://assets/sounds/notes/C2.wav")
+	
+	chord_sounds["A"] = load("res://assets/sounds/chords/chord_A.wav")
+	chord_sounds["C"] = load("res://assets/sounds/chords/chord_C.wav")
+	chord_sounds["D"] = load("res://assets/sounds/chords/chord_D.wav")
+	chord_sounds["E"] = load("res://assets/sounds/chords/chord_E.wav")
+	chord_sounds["F"] = load("res://assets/sounds/chords/chord_F.wav")
+	chord_sounds["G"] = load("res://assets/sounds/chords/chord_G.wav")
 	
 	beat_sprites["crot_c"] = load("res://assets/sprites/SLOTMACHINEnotes/crot_c.png")
 	beat_sprites["crot_d"] = load("res://assets/sprites/SLOTMACHINEnotes/crot_d.png")
@@ -91,6 +100,14 @@ func _ready():
 	beat_sprites["quav_rg"] = load("res://assets/sprites/SLOTMACHINEnotes/quav_rg.png")
 	beat_sprites["quav_ra"] = load("res://assets/sprites/SLOTMACHINEnotes/quav_ra.png")
 	beat_sprites["quav_rc2"] = load("res://assets/sprites/SLOTMACHINEnotes/quav_rc2.png")
+	
+	#can populate this once the sprites are in
+	#chord_sprites["A"] = load("res://assets/sprites/.....")
+	#chord_sprites["C"] = load("res://assets/sprites/.....")
+	#chord_sprites["D"] = load("res://assets/sprites/.....")
+	#chord_sprites["E"] = load("res://assets/sprites/.....")
+	#chord_sprites["F"] = load("res://assets/sprites/.....")
+	#chord_sprites["G"] = load("res://assets/sprites/.....")
 
 func generate_beat():
 	##range affect how often certain length of notes appear. We don't want too many rests.
@@ -164,3 +181,7 @@ func play_note(note):
 			print(sounds[pitch])
 			player.stream = sounds[pitch]
 			player.play()
+
+func play_chord(chord_name):
+	player.stream = chord_sounds[chord_name]
+	player.play()
