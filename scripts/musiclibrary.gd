@@ -101,13 +101,13 @@ func _ready():
 	beat_sprites["quav_ra"] = load("res://assets/sprites/SLOTMACHINEnotes/quav_ra.png")
 	beat_sprites["quav_rc2"] = load("res://assets/sprites/SLOTMACHINEnotes/quav_rc2.png")
 	
-	#can populate this once the sprites are in
-	#chord_sprites["A"] = load("res://assets/sprites/.....")
-	#chord_sprites["C"] = load("res://assets/sprites/.....")
-	#chord_sprites["D"] = load("res://assets/sprites/.....")
-	#chord_sprites["E"] = load("res://assets/sprites/.....")
-	#chord_sprites["F"] = load("res://assets/sprites/.....")
-	#chord_sprites["G"] = load("res://assets/sprites/.....")
+	#can populate properly this once the sprites are in
+	chord_sprites["A"] = load("res://assets/sprites/chords/CChord.png")
+	chord_sprites["C"] = load("res://assets/sprites/chords/CChord.png")
+	chord_sprites["D"] = load("res://assets/sprites/chords/CChord.png")
+	chord_sprites["E"] = load("res://assets/sprites/chords/CChord.png")
+	chord_sprites["F"] = load("res://assets/sprites/chords/CChord.png")
+	chord_sprites["G"] = load("res://assets/sprites/chords/CChord.png")
 
 func generate_beat():
 	##range affect how often certain length of notes appear. We don't want too many rests.

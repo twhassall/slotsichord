@@ -26,7 +26,9 @@ func _get_drag_data(at_position):
 
 	#give data - now as dict so we can check where it came from
 	#that way we can have different behaviour dragging from machine vs arrangement area
+	#also neewd to say it is a bar not a chord because they have differnet drop rules
 	return {
+		"type" : "bar",
 		"bar_data": bar_data,
 		"source_bar": self,
 	}
