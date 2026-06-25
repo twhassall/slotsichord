@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cehonte1e660c"]
+
+[ext_resource type="Texture2D" uid="uid://c102mhoab3b4x" path="res://assets/sprites/performance/audience.png" id="1_eo884"]
+[ext_resource type="Script" uid="uid://c3d4uw28ljsfi" path="res://scripts/audience.gd" id="2_reuy8"]
+
+[node name="Audience" type="Sprite2D" unique_id=1947440753]
+texture = ExtResource("1_eo884")
+hframes = 2
+frame = 1
+script = ExtResource("2_reuy8")

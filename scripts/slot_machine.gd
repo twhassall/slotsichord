@@ -37,7 +37,7 @@ func start_spin_reel(reel):
 func stop_spin_reel(reel, final_key):
 	reel.set_meta("spinning", false)
 	reel.texture = MusicLibrary.beat_sprites[final_key]
-	
+	##blurs stop animating and vanish
 	if reel == reel1:
 		$Reel1/Blur1.visible = false
 		$Reel1/Blur1/BlurAnimation1.stop()
@@ -54,11 +54,12 @@ func stop_spin_reel(reel, final_key):
 		$spinSound.stop()
 	
 func start_all_reels():
+	##to get reels all spinning together
 	reel1.set_meta("spinning", true)
 	reel2.set_meta("spinning", true)
 	reel3.set_meta("spinning", true)
 	reel4.set_meta("spinning", true)
-
+	##blurs appear and animate
 	$Reel1/Blur1.visible = true
 	$Reel2/Blur2.visible = true
 	$Reel3/Blur3.visible = true
@@ -102,6 +103,7 @@ func spin_all_reels(bar):
 var is_spinning := false
 
 func _on_spin_pressed():
+	##prevents lever from being spammed
 	if is_spinning:
 		return
 	is_spinning = true

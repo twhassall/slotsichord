@@ -8,6 +8,7 @@ bg_color = Color(0.6, 0.6, 0.6, 0.25490198)
 border_color = Color(0, 0, 0, 1)
 
 [node name="BarArea" type="PanelContainer" unique_id=1773127405]
+self_modulate = Color(1, 1, 1, 0)
 offset_left = 224.0
 offset_right = 328.0
 offset_bottom = 44.0

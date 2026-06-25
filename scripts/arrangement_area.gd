@@ -7,6 +7,8 @@ extends Control
 @onready var bpm_slider = $BPMSlider
 var slots = []
 
+signal perform_pressed
+
 func _ready():
 	for line_index in range(4):
 		#create a 'line' box
@@ -47,9 +49,12 @@ func play_all_bars():
 			await MusicLibrary.play_bar(bar)
 
 
-func _on_play_pressed():
+func _on_preview_pressed():
 	play_all_bars()
 
 func _on_h_slider_value_changed(value: float):
 	MusicLibrary.bpm = value
 	bpm_label.text = str(value)
+
+func _on_perfom_pressed():
+	emit_signal("perform_pressed")

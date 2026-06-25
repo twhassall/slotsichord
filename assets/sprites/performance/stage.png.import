@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cayws40w4atsk"
-path="res://.godot/imported/smoke.png-1325074aa216cc484491788645c8e8c6.ctex"
+uid="uid://du2a0mra61e30"
+path="res://.godot/imported/stage.png-25867b96573f80bdfb7ca59a8ce90ecf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/smoke.png"
-dest_files=["res://.godot/imported/smoke.png-1325074aa216cc484491788645c8e8c6.ctex"]
+source_file="res://assets/sprites/performance/stage.png"
+dest_files=["res://.godot/imported/stage.png-25867b96573f80bdfb7ca59a8ce90ecf.ctex"]
 
 [params]
 

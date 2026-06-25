@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dngtl16blxy04"
-path="res://.godot/imported/LeverSpriteSheet.png-b819b1c30356f67770fbaef4bd288613.ctex"
+uid="uid://l5vwkxn64tvp"
+path="res://.godot/imported/slotMachineBlur.png-d8616957a002ac85aa4237e913025e4a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/LeverSpriteSheet.png"
-dest_files=["res://.godot/imported/LeverSpriteSheet.png-b819b1c30356f67770fbaef4bd288613.ctex"]
+source_file="res://assets/sprites/slotmachine/slotMachineBlur.png"
+dest_files=["res://.godot/imported/slotMachineBlur.png-d8616957a002ac85aa4237e913025e4a.ctex"]
 
 [params]
 
