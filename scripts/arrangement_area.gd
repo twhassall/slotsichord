@@ -58,7 +58,12 @@ func play_all_bars():
 			else:	
 				await MusicLibrary.play_bar(bar)
 
-
+func clear_all_bars():
+	for line in slots:
+		for bit in line:
+			bit._clear_existing_bar()
+			bit.clear_existing_chord()
+			
 func _on_play_pressed():
 	print("playing all bars")
 	play_all_bars()
@@ -69,3 +74,14 @@ func _on_h_slider_value_changed(value: float):
 
 func _on_perfom_pressed():
 	emit_signal("perform_pressed")
+	
+func set_buttons_disabled(is_disabled):
+	print("self is: ", self)
+	print("children: ", get_children())
+	$Preview.disabled = is_disabled
+	$Reset.disabled = is_disabled
+	$Perform.disabled = is_disabled
+
+
+func _on_reset_pressed():
+	clear_all_bars()

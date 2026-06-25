@@ -36,7 +36,7 @@ offset_bottom = 430.0
 text = "Reset
 (start over)"
 
-[node name="Perfom" type="Button" parent="." unique_id=646544303]
+[node name="Perform" type="Button" parent="." unique_id=646544303]
 layout_mode = 0
 offset_left = 204.0
 offset_top = 374.0
@@ -64,6 +64,7 @@ offset_right = 51.0
 offset_bottom = 42.0
 
 [connection signal="pressed" from="Preview" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="Perfom" to="." method="_on_perfom_pressed"]
+[connection signal="pressed" from="Reset" to="." method="_on_reset_pressed"]
+[connection signal="pressed" from="Perform" to="." method="_on_perfom_pressed"]
 [connection signal="changed" from="BPMSlider" to="." method="_on_h_slider_changed"]
 [connection signal="value_changed" from="BPMSlider" to="." method="_on_h_slider_value_changed"]
