@@ -20,6 +20,10 @@ func _ready():
 	add_child(player)
 	
 	spinSound = load("res://assets/sounds/slotMachineSpin.wav")
+	reel1.texture = MusicLibrary.beat_sprites["crot_r"]
+	reel2.texture = MusicLibrary.beat_sprites["crot_r"]
+	reel3.texture = MusicLibrary.beat_sprites["crot_r"]
+	reel4.texture = MusicLibrary.beat_sprites["crot_r"]
 	
 	#test code - REMOVE THIS
 	for i in range(5):
