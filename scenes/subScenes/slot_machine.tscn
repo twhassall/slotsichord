@@ -4,9 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://cpj8dgkgq0x4d" path="res://assets/sprites/slotmachine/slot_machine.png" id="2_ava31"]
 [ext_resource type="Texture2D" uid="uid://dngtl16blxy04" path="res://assets/sprites/slotmachine/LeverSpriteSheet.png" id="3_r8ptc"]
 [ext_resource type="Texture2D" uid="uid://cayws40w4atsk" path="res://assets/sprites/slotmachine/smoke.png" id="4_r8ptc"]
-[ext_resource type="AudioStream" uid="uid://bhrvjsy3gkejy" path="res://assets/sounds/slotMachineSpin.wav" id="5_0xq38"]
+[ext_resource type="AudioStream" uid="uid://bhrvjsy3gkejy" path="res://assets/sounds/slotMachine/slotMachineSpin.wav" id="5_0xq38"]
 [ext_resource type="Texture2D" uid="uid://l5vwkxn64tvp" path="res://assets/sprites/slotmachine/slotMachineBlur.png" id="5_pt82j"]
-[ext_resource type="AudioStream" uid="uid://cmoyf4u5rd63s" path="res://assets/sounds/slotMachineCrank.wav" id="6_degk7"]
+[ext_resource type="AudioStream" uid="uid://cmoyf4u5rd63s" path="res://assets/sounds/slotMachine/slotMachineCrank.wav" id="6_degk7"]
+[ext_resource type="PackedScene" uid="uid://bircwyj85eo7a" path="res://scenes/subScenes/ChordSprite.tscn" id="8_lq40k"]
 
 [sub_resource type="Animation" id="Animation_ava31"]
 resource_name = "Pull"
@@ -376,5 +377,43 @@ offset_left = 84.0
 offset_top = 457.0
 offset_right = 529.0
 offset_bottom = 589.0
+
+[node name="AChord" parent="." unique_id=145211817 instance=ExtResource("8_lq40k")]
+layout_mode = 1
+offset_left = 85.0
+offset_top = 557.0
+offset_right = 85.0
+offset_bottom = 557.0
+chord_name = "A"
+
+[node name="CChord" parent="." unique_id=1545176320 instance=ExtResource("8_lq40k")]
+layout_mode = 1
+offset_left = 153.0
+offset_top = 546.0
+offset_right = 153.0
+offset_bottom = 546.0
+
+[node name="DChord" parent="." unique_id=448593176 instance=ExtResource("8_lq40k")]
+layout_mode = 1
+offset_left = 199.0
+offset_top = 544.0
+offset_right = 199.0
+offset_bottom = 544.0
+chord_name = "D"
+
+[node name="EChord" parent="." unique_id=1773000352 instance=ExtResource("8_lq40k")]
+layout_mode = 0
+anchors_preset = 0
+chord_name = "E"
+
+[node name="FChord" parent="." unique_id=418968781 instance=ExtResource("8_lq40k")]
+layout_mode = 0
+anchors_preset = 0
+chord_name = "F"
+
+[node name="GChord" parent="." unique_id=2086906863 instance=ExtResource("8_lq40k")]
+layout_mode = 0
+anchors_preset = 0
+chord_name = "G"
 
 [connection signal="pressed" from="Spin" to="." method="_on_spin_pressed"]

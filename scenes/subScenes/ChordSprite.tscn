@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://bircwyj85eo7a"]
+
+[ext_resource type="Script" uid="uid://n55hxpd4ajuk" path="res://scripts/chord_sprite.gd" id="1_ddeb4"]
+
+[node name="ChordSprite" type="TextureRect" unique_id=145211817]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 0
+stretch_mode = 5
+script = ExtResource("1_ddeb4")
