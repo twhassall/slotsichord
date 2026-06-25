@@ -124,9 +124,11 @@ func beat_to_key(beat):
 		return "quav_" + note_to_sprite_name(beat[0][0]) + note_to_sprite_name(beat[1][0])
 
 #call the list from here always		
-func bar_to_sprites(bar):
+func bar_to_sprites(bar_data):
+	
 	var sprites = []
-	for beat in bar:
+	for beat in bar_data:
+		print("beat:",beat)
 		var key = beat_to_key(beat)
 		sprites.append(beat_sprites[key])
 	return sprites

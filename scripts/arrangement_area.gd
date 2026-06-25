@@ -4,6 +4,7 @@ extends Control
 
 @onready var lines_container = $Lines
 @onready var bpm_label = $BPMSlider/BPMLabel
+@onready var bpm_slider = $BPMSlider
 var slots = []
 
 func _ready():
@@ -33,6 +34,8 @@ func _ready():
 		
 		#add a ref to all the slots so we can play through them all
 		slots.append(line_slots)
+		
+		bpm_slider.value = MusicLibrary.bpm
 
 func play_all_bars():
 	for line in slots:

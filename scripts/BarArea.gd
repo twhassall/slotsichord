@@ -24,5 +24,9 @@ func _get_drag_data(at_position):
 	var ghost = duplicate()
 	set_drag_preview(ghost)
 
-	#give data
-	return data
+	#give data - now as dict so we can check where it came from
+	#that way we can have different behaviour dragging from machine vs arrangement area
+	return {
+		"bar_data": bar_data,
+		"source_bar": self,
+	}
