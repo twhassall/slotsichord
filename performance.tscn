@@ -56,9 +56,9 @@ root_node = NodePath("../..")
 libraries/ = SubResource("AnimationLibrary_pbtqv")
 
 [node name="MakeHerMove" type="Button" parent="." unique_id=2143887782]
-offset_left = 273.0
-offset_top = 227.0
-offset_right = 333.0
-offset_bottom = 283.0
+offset_left = 169.0
+offset_top = 13.0
+offset_right = 229.0
+offset_bottom = 69.0
 
 [connection signal="pressed" from="MakeHerMove" to="." method="_on_make_her_move_pressed"]
