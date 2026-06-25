@@ -60,6 +60,9 @@ func drop_bar(data):
 	thisBar.set_bar(bar_data)
 	thisBar.set_textures(MusicLibrary.bar_to_sprites(bar_data))
 	
+	
+	thisBar.show_stave(false)
+	
 func drop_chord(data):
 	var chord_name = data["chord_name"]
 	print("chord dropped" + chord_name)
