@@ -27,4 +27,7 @@ func pan_to_performance():
 	$JuniperNode.start_conducting()
 	await $ArrangementArea.play_all_bars()
 	$JuniperNode.stop_conducting()
+	#pause before reaction
+	#feel free to adjust!
+	await get_tree().create_timer(1).timeout
 	$JuniperNode.audience_reaction()
