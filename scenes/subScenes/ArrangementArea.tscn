@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://g7nmx3jsyfp4"]
 
 [ext_resource type="Script" uid="uid://b3n7u1kht32pk" path="res://scripts/arrangement_area.gd" id="1_t53rw"]
+[ext_resource type="PackedScene" uid="uid://but188dhkcmpn" path="res://scenes/subScenes/BarSlot.tscn" id="2_gmnrp"]
 
 [node name="ArrangementArea" type="Control" unique_id=2060967160]
 layout_mode = 3
@@ -11,12 +12,86 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_t53rw")
 
-[node name="Lines" type="VBoxContainer" parent="." unique_id=1613665150]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="Lines" type="Control" parent="." unique_id=1853830077]
+anchors_preset = 0
+offset_right = 424.0
+offset_bottom = 500.0
 mouse_filter = 2
-theme_override_constants/separation = 100
+
+[node name="Line1" type="HBoxContainer" parent="Lines" unique_id=2119468458]
+layout_mode = 0
+offset_right = 424.0
+offset_bottom = 50.0
+theme_override_constants/separation = 0
+
+[node name="BarSlot" parent="Lines/Line1" unique_id=79171669 instance=ExtResource("2_gmnrp")]
+layout_mode = 2
+
+[node name="BarSlot2" parent="Lines/Line1" unique_id=436051339 instance=ExtResource("2_gmnrp")]
+layout_mode = 2
+
+[node name="BarSlot3" parent="Lines/Line1" unique_id=297862867 instance=ExtResource("2_gmnrp")]
+layout_mode = 2
+
+[node name="BarSlot4" parent="Lines/Line1" unique_id=1256910018 instance=ExtResource("2_gmnrp")]
+layout_mode = 2
+
+[node name="Line2" type="HBoxContainer" parent="Lines" unique_id=742286735]
+layout_mode = 0
+offset_top = 150.0
+offset_right = 424.0
+offset_bottom = 200.0
+theme_override_constants/separation = 0
+
+[node name="BarSlot" parent="Lines/Line2" unique_id=334940245 instance=ExtResource("2_gmnrp")]
+layout_mode = 2
+
+[node name="BarSlot2" parent="Lines/Line2" unique_id=1767762684 instance=ExtResource("2_gmnrp")]
+layout_mode = 2
+
+[node name="BarSlot3" parent="Lines/Line2" unique_id=853251202 instance=ExtResource("2_gmnrp")]
+layout_mode = 2
+
+[node name="BarSlot4" parent="Lines/Line2" unique_id=530347873 instance=ExtResource("2_gmnrp")]
+layout_mode = 2
+
+[node name="Line3" type="HBoxContainer" parent="Lines" unique_id=1860241623]
+layout_mode = 0
+offset_top = 300.0
+offset_right = 424.0
+offset_bottom = 350.0
+theme_override_constants/separation = 0
+
+[node name="BarSlot" parent="Lines/Line3" unique_id=1539833092 instance=ExtResource("2_gmnrp")]
+layout_mode = 2
+
+[node name="BarSlot2" parent="Lines/Line3" unique_id=1508435763 instance=ExtResource("2_gmnrp")]
+layout_mode = 2
+
+[node name="BarSlot3" parent="Lines/Line3" unique_id=1738891693 instance=ExtResource("2_gmnrp")]
+layout_mode = 2
+
+[node name="BarSlot4" parent="Lines/Line3" unique_id=839431984 instance=ExtResource("2_gmnrp")]
+layout_mode = 2
+
+[node name="Line4" type="HBoxContainer" parent="Lines" unique_id=241021127]
+layout_mode = 0
+offset_top = 450.0
+offset_right = 424.0
+offset_bottom = 500.0
+theme_override_constants/separation = 0
+
+[node name="BarSlot" parent="Lines/Line4" unique_id=1901970957 instance=ExtResource("2_gmnrp")]
+layout_mode = 2
+
+[node name="BarSlot2" parent="Lines/Line4" unique_id=913786397 instance=ExtResource("2_gmnrp")]
+layout_mode = 2
+
+[node name="BarSlot3" parent="Lines/Line4" unique_id=1032252388 instance=ExtResource("2_gmnrp")]
+layout_mode = 2
+
+[node name="BarSlot4" parent="Lines/Line4" unique_id=1096468626 instance=ExtResource("2_gmnrp")]
+layout_mode = 2
 
 [node name="Preview" type="Button" parent="." unique_id=1416784464]
 layout_mode = 0

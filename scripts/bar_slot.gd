@@ -31,7 +31,7 @@ func _clear_existing_bar():
 			
 func clear_existing_chord():
 	current_chord = ""
-	chord_label.text = ""
+	chord_label.texture = null
 	var currentChord = get_node_or_null("ChordSprite")
 	if currentChord:
 		currentChord.queue_free()
