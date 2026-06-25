@@ -37,9 +37,21 @@ func start_spin_reel(reel):
 func stop_spin_reel(reel, final_key):
 	reel.set_meta("spinning", false)
 	reel.texture = MusicLibrary.beat_sprites[final_key]
-	if reel == reel4:
+	
+	if reel == reel1:
+		$Reel1/Blur1.visible = false
+		$Reel1/Blur1/BlurAnimation1.stop()
+	elif reel == reel2:
+		$Reel2/Blur2.visible = false
+		$Reel2/Blur2/BlurAnimation2.stop()
+	elif reel == reel3:
+		$Reel3/Blur3.visible = false
+		$Reel3/Blur3/BlurAnimation3.stop()
+	elif reel == reel4:
+		$Reel4/Blur4.visible = false
+		$Reel4/Blur4/BlurAnimation4.stop()
 		await get_tree().create_timer(0.1).timeout
-		player.stop()
+		$spinSound.stop()
 	
 func start_all_reels():
 	reel1.set_meta("spinning", true)
@@ -47,6 +59,15 @@ func start_all_reels():
 	reel3.set_meta("spinning", true)
 	reel4.set_meta("spinning", true)
 
+	$Reel1/Blur1.visible = true
+	$Reel2/Blur2.visible = true
+	$Reel3/Blur3.visible = true
+	$Reel4/Blur4.visible = true
+	$Reel1/Blur1/BlurAnimation1.play("blur1")
+	$Reel2/Blur2/BlurAnimation2.play("blur2")
+	$Reel3/Blur3/BlurAnimation3.play("blur3")
+	$Reel4/Blur4/BlurAnimation4.play("blur4")
+	
 	start_spin_reel(reel1)
 	start_spin_reel(reel2)
 	start_spin_reel(reel3)
@@ -78,19 +99,27 @@ func spin_all_reels(bar):
 	
 	render_bar(current_bar)
 
+var is_spinning := false
+
 func _on_spin_pressed():
-	player.stream = spinSound
-	player.play()
+	if is_spinning:
+		return
+	is_spinning = true
+	
 	current_bar = MusicLibrary.generate_bar()
 	MusicLibrary.current_bar = current_bar
-	##visual
 	$SlotMachine/Crank/CrankAnimation.play("Pull")
+	$crankSound.play()
+	await get_tree().create_timer(0.3).timeout
+	$spinSound.play()
+	await get_tree().create_timer(0.3).timeout
 	await spin_all_reels(current_bar)
-	##audio
 	await get_tree().create_timer(0.5).timeout
 	await MusicLibrary.play_bar(current_bar)
 	print (current_bar)
 	
+	is_spinning = false
+
 func render_bar(bar):
 	var sprites = MusicLibrary.bar_to_sprites(bar)
 

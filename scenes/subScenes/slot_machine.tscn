@@ -4,10 +4,13 @@
 [ext_resource type="Texture2D" uid="uid://cpj8dgkgq0x4d" path="res://assets/sprites/slot_machine.png" id="2_ava31"]
 [ext_resource type="Texture2D" uid="uid://dngtl16blxy04" path="res://assets/sprites/LeverSpriteSheet.png" id="3_r8ptc"]
 [ext_resource type="Texture2D" uid="uid://cayws40w4atsk" path="res://assets/sprites/smoke.png" id="4_r8ptc"]
+[ext_resource type="AudioStream" uid="uid://bhrvjsy3gkejy" path="res://assets/sounds/slotMachineSpin.wav" id="5_0xq38"]
+[ext_resource type="Texture2D" uid="uid://l5vwkxn64tvp" path="res://assets/sprites/slotMachineBlur.png" id="5_pt82j"]
+[ext_resource type="AudioStream" uid="uid://cmoyf4u5rd63s" path="res://assets/sounds/slotMachineCrank.wav" id="6_degk7"]
 
 [sub_resource type="Animation" id="Animation_ava31"]
 resource_name = "Pull"
-length = 2.2
+length = 2.2666667
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -96,6 +99,158 @@ _data = {
 &"smoke2": SubResource("Animation_pt82j")
 }
 
+[sub_resource type="Animation" id="Animation_lq40k"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Reel1/Blur1:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_f18vj"]
+resource_name = "blur1"
+length = 0.16666667
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Reel1/Blur1:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.13333334),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pn73r"]
+_data = {
+&"RESET": SubResource("Animation_lq40k"),
+&"blur1": SubResource("Animation_f18vj")
+}
+
+[sub_resource type="Animation" id="Animation_pn73r"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_k06gv"]
+resource_name = "blur2"
+length = 0.1667
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.13333334),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [1, 2, 0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_plc8i"]
+_data = {
+&"RESET": SubResource("Animation_pn73r"),
+&"blur2": SubResource("Animation_k06gv")
+}
+
+[sub_resource type="Animation" id="Animation_wx471"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_j3jed"]
+resource_name = "blur3"
+length = 0.1667
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.13333334),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_084gh"]
+_data = {
+&"RESET": SubResource("Animation_wx471"),
+&"blur3": SubResource("Animation_j3jed")
+}
+
+[sub_resource type="Animation" id="Animation_k1jfg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_0w3hv"]
+resource_name = "blur4"
+length = 0.1667
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.13333334),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [1, 2, 0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8jvq5"]
+_data = {
+&"RESET": SubResource("Animation_k1jfg"),
+&"blur4": SubResource("Animation_0w3hv")
+}
+
 [node name="SlotMachine" type="Control" unique_id=1553664927]
 layout_mode = 3
 anchors_preset = 0
@@ -134,12 +289,35 @@ offset_top = 171.0
 offset_right = 185.0
 offset_bottom = 330.0
 
+[node name="Blur1" type="Sprite2D" parent="Reel1" unique_id=770599060]
+visible = false
+position = Vector2(54, 78.5)
+scale = Vector2(4.25, 4.25)
+texture = ExtResource("5_pt82j")
+hframes = 3
+
+[node name="BlurAnimation1" type="AnimationPlayer" parent="Reel1/Blur1" unique_id=75093271]
+root_node = NodePath("../../..")
+libraries/ = SubResource("AnimationLibrary_pn73r")
+
 [node name="Reel2" type="TextureRect" parent="." unique_id=58768783]
 layout_mode = 0
 offset_left = 190.0
 offset_top = 171.0
 offset_right = 300.0
 offset_bottom = 330.0
+
+[node name="Blur2" type="Sprite2D" parent="Reel2" unique_id=1553310928]
+visible = false
+position = Vector2(56, 78.5)
+rotation = -3.1412141
+scale = Vector2(4.25, 4.25)
+texture = ExtResource("5_pt82j")
+hframes = 3
+frame = 1
+
+[node name="BlurAnimation2" type="AnimationPlayer" parent="Reel2/Blur2" unique_id=1470752465]
+libraries/ = SubResource("AnimationLibrary_plc8i")
 
 [node name="Reel3" type="TextureRect" parent="." unique_id=1011471942]
 layout_mode = 0
@@ -148,12 +326,41 @@ offset_top = 171.0
 offset_right = 415.0
 offset_bottom = 330.0
 
+[node name="Blur3" type="Sprite2D" parent="Reel3" unique_id=1422707837]
+visible = false
+position = Vector2(54, 78.5)
+scale = Vector2(4.25, 4.25)
+texture = ExtResource("5_pt82j")
+hframes = 3
+
+[node name="BlurAnimation3" type="AnimationPlayer" parent="Reel3/Blur3" unique_id=682387607]
+libraries/ = SubResource("AnimationLibrary_084gh")
+
 [node name="Reel4" type="TextureRect" parent="." unique_id=1294516516]
 layout_mode = 0
 offset_left = 420.0
 offset_top = 171.5
 offset_right = 530.0
 offset_bottom = 330.5
+
+[node name="Blur4" type="Sprite2D" parent="Reel4" unique_id=1183149560]
+visible = false
+position = Vector2(56, 77.5)
+rotation = 3.1415927
+scale = Vector2(4.25, 4.25)
+texture = ExtResource("5_pt82j")
+hframes = 3
+frame = 1
+
+[node name="BlurAnimation4" type="AnimationPlayer" parent="Reel4/Blur4" unique_id=233547035]
+libraries/ = SubResource("AnimationLibrary_8jvq5")
+
+[node name="spinSound" type="AudioStreamPlayer" parent="." unique_id=2140391810]
+stream = ExtResource("5_0xq38")
+volume_db = -10.0
+
+[node name="crankSound" type="AudioStreamPlayer" parent="." unique_id=1487927543]
+stream = ExtResource("6_degk7")
 
 [node name="Spin" type="Button" parent="." unique_id=2136534447]
 modulate = Color(1, 1, 1, 0)
