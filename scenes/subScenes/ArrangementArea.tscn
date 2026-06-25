@@ -3,6 +3,120 @@
 [ext_resource type="Script" uid="uid://b3n7u1kht32pk" path="res://scripts/arrangement_area.gd" id="1_t53rw"]
 [ext_resource type="Texture2D" uid="uid://bveat4ikjkfib" path="res://assets/sprites/musicSheet.png" id="2_gmnrp"]
 [ext_resource type="PackedScene" uid="uid://but188dhkcmpn" path="res://scenes/subScenes/BarSlot.tscn" id="3_o8ntw"]
+[ext_resource type="Texture2D" uid="uid://d2j08jrs4jxki" path="res://assets/sprites/buttons/preview.png" id="4_6jpjo"]
+[ext_resource type="Texture2D" uid="uid://cm8xdbj5amfqs" path="res://assets/sprites/buttons/reset.png" id="5_bljxu"]
+[ext_resource type="Texture2D" uid="uid://b5pkastgx06lq" path="res://assets/sprites/buttons/perform.png" id="6_etmuu"]
+
+[sub_resource type="Animation" id="Animation_6jpjo"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PreviewButton:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_bljxu"]
+resource_name = "press"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PreviewButton:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [1, 0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_etmuu"]
+_data = {
+&"RESET": SubResource("Animation_6jpjo"),
+&"press": SubResource("Animation_bljxu")
+}
+
+[sub_resource type="Animation" id="Animation_etmuu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ResetButton:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_bb7ac"]
+resource_name = "press"
+length = 0.39999999999999997
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ResetButton:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [1, 0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mgk2m"]
+_data = {
+&"RESET": SubResource("Animation_etmuu"),
+&"press": SubResource("Animation_bb7ac")
+}
+
+[sub_resource type="Animation" id="Animation_2ol8w"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PerformButton:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_btd2q"]
+resource_name = "press"
+length = 0.39999999999999997
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PerformButton:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [1, 0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_04m8t"]
+_data = {
+&"RESET": SubResource("Animation_2ol8w"),
+&"press": SubResource("Animation_btd2q")
+}
 
 [node name="ArrangementArea" type="Control" unique_id=2060967160]
 layout_mode = 3
@@ -107,32 +221,58 @@ layout_mode = 2
 [node name="BarSlot4" parent="Lines/Line4" unique_id=1096468626 instance=ExtResource("3_o8ntw")]
 layout_mode = 2
 
-[node name="Preview" type="Button" parent="." unique_id=1416784464]
-layout_mode = 0
-offset_left = 81.0
-offset_top = 373.0
-offset_right = 195.0
-offset_bottom = 429.0
-text = "Preview
-(play music)"
+[node name="PreviewButton" type="Sprite2D" parent="." unique_id=1624120683]
+position = Vector2(96, 400)
+scale = Vector2(2.85, 2.85)
+texture = ExtResource("4_6jpjo")
+vframes = 2
 
-[node name="Reset" type="Button" parent="." unique_id=913694807]
-layout_mode = 0
-offset_left = 328.0
-offset_top = 374.0
-offset_right = 442.0
-offset_bottom = 430.0
-text = "Reset
-(start over)"
+[node name="PreviewAnim" type="AnimationPlayer" parent="PreviewButton" unique_id=690780181]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_etmuu")
 
-[node name="Perform" type="Button" parent="." unique_id=646544303]
-layout_mode = 0
-offset_left = 204.0
-offset_top = 374.0
-offset_right = 318.0
-offset_bottom = 430.0
-text = "Perform
-(go to stage)"
+[node name="Preview" type="Button" parent="PreviewButton" unique_id=1416784464]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -24.912281
+offset_top = -10.526306
+offset_right = 25.263157
+offset_bottom = 11.228058
+
+[node name="ResetButton" type="Sprite2D" parent="." unique_id=1832780048]
+position = Vector2(384, 400)
+scale = Vector2(2.85, 2.85)
+texture = ExtResource("5_bljxu")
+vframes = 2
+frame = 1
+
+[node name="Reset" type="Button" parent="ResetButton" unique_id=913694807]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -20.000015
+offset_top = -10.877197
+offset_right = 20.350876
+offset_bottom = 10.877197
+
+[node name="ResetAnim" type="AnimationPlayer" parent="ResetButton" unique_id=1597128082]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_mgk2m")
+
+[node name="PerformButton" type="Sprite2D" parent="." unique_id=974749761]
+position = Vector2(246, 400)
+scale = Vector2(2.85, 2.85)
+texture = ExtResource("6_etmuu")
+vframes = 2
+frame = 1
+
+[node name="Perform" type="Button" parent="PerformButton" unique_id=646544303]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -24.561401
+offset_top = -10.526306
+offset_right = 24.912292
+offset_bottom = 11.578949
+
+[node name="PerformAnim" type="AnimationPlayer" parent="PerformButton" unique_id=1041153777]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_04m8t")
 
 [node name="BPMSlider" type="HSlider" parent="." unique_id=65646243]
 layout_mode = 0
@@ -152,8 +292,8 @@ offset_top = 19.0
 offset_right = 51.0
 offset_bottom = 42.0
 
-[connection signal="pressed" from="Preview" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="Reset" to="." method="_on_reset_pressed"]
-[connection signal="pressed" from="Perform" to="." method="_on_perfom_pressed"]
+[connection signal="pressed" from="PreviewButton/Preview" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="ResetButton/Reset" to="." method="_on_reset_pressed"]
+[connection signal="pressed" from="PerformButton/Perform" to="." method="_on_perfom_pressed"]
 [connection signal="changed" from="BPMSlider" to="." method="_on_h_slider_changed"]
 [connection signal="value_changed" from="BPMSlider" to="." method="_on_h_slider_value_changed"]
