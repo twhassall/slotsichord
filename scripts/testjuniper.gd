@@ -9,11 +9,18 @@ func _ready():
 	$PlayAgainButton.frame=0
 	$PlayAgainButton.visible = false
 	
-func start_conducting():	
+	$Juniper/JuniperAnimation.play("idle")
+	
+func start_conducting():
 	$Juniper/JuniperAnimation.play("conduct")
 
 func stop_conducting():
-	$Juniper/JuniperAnimation.pause()
+	$Juniper/JuniperAnimation.get_animation("conduct").loop_mode = Animation.LOOP_NONE
+	$Juniper/JuniperAnimation.animation_finished.connect(_on_conduct_loop_finished, CONNECT_ONE_SHOT)
+
+func _on_conduct_loop_finished(_anim_name: String):
+	$Juniper/JuniperAnimation.get_animation("conduct").loop_mode = Animation.LOOP_LINEAR
+	$Juniper/JuniperAnimation.play("idle")
 	
 func audience_reaction():
 	var cheer_count = 0
