@@ -9,6 +9,7 @@ func _get_drag_data(at_position):
 	
 	var ghosty = duplicate()
 	set_drag_preview(ghosty)
+	MusicLibrary.play_pickup()
 
 	return {
 		"type": "chord",

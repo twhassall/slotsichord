@@ -79,3 +79,5 @@ offset_right = 40.0
 offset_bottom = 40.0
 mouse_filter = 2
 stretch_mode = 2
+
+[connection signal="mouse_entered" from="SpecificBar" to="." method="_on_specific_bar_mouse_entered"]

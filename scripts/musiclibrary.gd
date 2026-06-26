@@ -26,6 +26,7 @@ var ui_drop = null
 var ui_button = null
 var ui_button_2 = null
 var ui_pickup = null
+var ui_mouseover = null
 
 
 func _ready():
@@ -124,6 +125,7 @@ func _ready():
 	ui_button = load("res://assets/sounds/ui/button_press.mp3")
 	ui_button_2 = load("res://assets/sounds/ui/button_press_2.mp3")
 	ui_pickup = load("res://assets/sounds/ui/ui_pickup.ogg")
+	ui_mouseover = load("res://assets/sounds/ui/ui_mouseover.ogg")
 	
 func generate_beat():
 	##range affect how often certain length of notes appear. We don't want too many rests.
@@ -204,16 +206,20 @@ func play_chord(chord_name):
 	
 func play_drop():
 	chord_player.stream = ui_drop
-	chord_player.play()
+	ui_player.play()
 	
 func play_button():
 	chord_player.stream = ui_button
-	chord_player.play()
+	ui_player.play()
 
 func play_button_two():
 	chord_player.stream = ui_button_2
-	chord_player.play()
+	ui_player.play()
 	
 func play_pickup():
 	chord_player.stream = ui_pickup
-	chord_player.play()
+	ui_player.play()
+	
+func play_mouseover():
+	chord_player.stream = ui_mouseover
+	ui_player.play()

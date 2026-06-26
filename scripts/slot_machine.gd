@@ -167,6 +167,7 @@ func clear_all_bars():
 		bar.queue_free()
 
 func _on_insert_coin_pressed():
+	MusicLibrary.play_button()
 	$SlotMachine/InsertCoinButton/InsertCoinAnimation.play("press")
 	$Funnel/CoinDrop.play("drop")
 	$SlotMachine/InsertCoinButton/InsertCoin.disabled = true
