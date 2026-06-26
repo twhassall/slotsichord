@@ -3,8 +3,6 @@ extends Control
 @onready var player = $AudioStreamPlayer
 @onready var slotMachine = %SlotMachine
 
-
-
 func _ready():
 	##connects this script to the perform button in arrangement_area.gd
 	$ArrangementArea.perform_pressed.connect(pan_to_performance)

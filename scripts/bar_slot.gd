@@ -8,6 +8,7 @@ func _can_drop_data(at_position, data):
 	return true
 	#copy the bar data
 func _drop_data(at_position, data):
+	MusicLibrary.play_pop()
 	if data["type"] == "bar":
 		drop_bar(data)
 	elif data["type"] == "chord":

@@ -21,12 +21,16 @@ var chord_sprites = {}
 var current_bar = []
 var player: AudioStreamPlayer
 var chord_player: AudioStreamPlayer
+var ui_player: AudioStreamPlayer
+var ui_pop = null
 
 func _ready():
 	player = AudioStreamPlayer.new()
 	add_child(player)
 	chord_player = AudioStreamPlayer.new()
 	add_child(chord_player)
+	ui_player = AudioStreamPlayer.new()
+	add_child(ui_player)
 	sounds["C"]  = load("res://assets/sounds/notes/C.wav")
 	sounds["D"]  = load("res://assets/sounds/notes/D.wav")
 	sounds["E"]  = load("res://assets/sounds/notes/E.wav")
@@ -111,6 +115,8 @@ func _ready():
 	chord_sprites["E"] = load("res://assets/sprites/chords/EChord.png")
 	chord_sprites["F"] = load("res://assets/sprites/chords/FChord.png")
 	chord_sprites["G"] = load("res://assets/sprites/chords/GChord.png")
+	
+	ui_pop = load("res://assets/sounds/ui/click1.ogg")
 
 func generate_beat():
 	##range affect how often certain length of notes appear. We don't want too many rests.
@@ -187,4 +193,8 @@ func play_note(note):
 
 func play_chord(chord_name):
 	chord_player.stream = chord_sounds[chord_name]
+	chord_player.play()
+	
+func play_pop():
+	chord_player.stream = ui_pop
 	chord_player.play()
