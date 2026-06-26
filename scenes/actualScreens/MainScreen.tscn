@@ -29,9 +29,9 @@ offset_bottom = 106.2
 
 [node name="ArrangementArea" parent="." unique_id=2060967160 instance=ExtResource("3_qbncj")]
 layout_mode = 1
-offset_left = 791.0
+offset_left = 825.0
 offset_top = 35.0
-offset_right = 791.0
+offset_right = 825.0
 offset_bottom = 35.0
 
 [node name="JuniperNode" parent="." unique_id=314397147 instance=ExtResource("4_ajx71")]
