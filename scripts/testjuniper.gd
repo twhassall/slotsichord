@@ -1,6 +1,7 @@
 extends Node2D
 
 signal encore_pressed
+signal play_again_pressed
 
 func _ready():
 	randomize()
@@ -85,6 +86,8 @@ func _on_encore_pressed():
 
 func _on_play_again_pressed():
 	$PlayAgainButton/PlayAgainAnim.play("press")
+	emit_signal("play_again_pressed")
+
 	
 func set_buttons_disabled(is_disabled):
 	$EncoreButton/Encore.disabled = is_disabled

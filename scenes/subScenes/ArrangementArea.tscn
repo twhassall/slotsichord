@@ -146,7 +146,7 @@ position = Vector2(234, 360)
 texture = ExtResource("2_etmuu")
 
 [node name="Clef" type="Sprite2D" parent="." unique_id=1599659359]
-position = Vector2(9, 27)
+position = Vector2(0, 31)
 texture = ExtResource("3_6oaw7")
 
 [node name="Lines" type="Control" parent="." unique_id=1853830077]

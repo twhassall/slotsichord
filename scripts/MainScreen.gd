@@ -3,10 +3,13 @@ extends Control
 @onready var player = $AudioStreamPlayer
 @onready var slotMachine = %SlotMachine
 
+
+
 func _ready():
 	##connects this script to the perform button in arrangement_area.gd
 	$ArrangementArea.perform_pressed.connect(pan_to_performance)
 	$JuniperNode.encore_pressed.connect(encore)
+	$JuniperNode.play_again_pressed.connect(on_play_again)
 	
 func pan_to_performance():
 	$ArrangementArea.set_buttons_disabled(true)
@@ -75,3 +78,45 @@ func encore():
 	fade_out.tween_property($JuniperNode/EncoreButton, "modulate:a", 0.0, 0.5)
 	fade_out.parallel().tween_property($JuniperNode/PlayAgainButton, "modulate:a", 0.0, 0.5)
 	performance()
+	
+func on_play_again():
+	$ArrangementArea.clear_all_bars()
+	%SlotMachine.reset_slotmachine()
+	pan_back_to_start()
+	
+func pan_back_to_start():	
+	
+	#fade out and disable performance buttons
+	$JuniperNode.set_buttons_disabled(true)
+	var fade_out = create_tween()
+	fade_out.set_ease(Tween.EASE_IN_OUT)
+	fade_out.set_trans(Tween.TRANS_SINE)
+	fade_out.tween_property($JuniperNode/EncoreButton, "modulate:a", 0.0, 0.5)
+	fade_out.parallel().tween_property($JuniperNode/PlayAgainButton, "modulate:a", 0.0, 0.5)
+	
+	
+	##moves the camera smoothly
+	var tween = create_tween()
+	tween.set_ease(Tween.EASE_IN_OUT)
+	tween.set_trans(Tween.TRANS_SINE)
+	#obvs set this to wherever the actual start menu is
+	tween.tween_property($Camera2D, "position", Vector2(200.0,324.0), 2.0)
+	
+	#enable arrangement buttons
+	$ArrangementArea.set_buttons_disabled(false)
+	
+	#fade in arrangement buttons
+	$ArrangementArea/PreviewButton.modulate.a = 0.0
+	$ArrangementArea/PerformButton.modulate.a = 0.0
+	$ArrangementArea/ResetButton.modulate.a = 0.0
+	$ArrangementArea/PreviewButton.visible = true
+	$ArrangementArea/PerformButton.visible = true
+	$ArrangementArea/ResetButton.visible = true
+	
+	var fade_in = create_tween()
+	fade_in.set_ease(Tween.EASE_IN_OUT)
+	fade_in.set_trans(Tween.TRANS_SINE)
+	fade_in.tween_property($ArrangementArea/PreviewButton, "modulate:a", 1.0, 1.0)
+	fade_in.parallel().tween_property($ArrangementArea/PerformButton, "modulate:a", 1.0, 1.0)
+	fade_in.parallel().tween_property($ArrangementArea/ResetButton, "modulate:a", 1.0, 1.0)
+	

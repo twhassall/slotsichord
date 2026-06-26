@@ -145,3 +145,13 @@ func smoke_loop():
 	while true:
 		await get_tree().create_timer(randf_range(2.0, 8.0)).timeout
 		$SlotMachine/CiggySmoke/CiggyAnimation.play("smoke1")
+
+func reset_slotmachine():
+	clear_all_bars()
+	spinNum = 8
+	$SpinsLeft.frame = 8
+	$Spin.disabled = false
+		
+func clear_all_bars():
+	for bar in barOuputarea.get_children():
+		bar.queue_free()
