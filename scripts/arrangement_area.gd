@@ -61,12 +61,14 @@ func clear_all_bars():
 			bit.clear_existing_chord()
 			
 func _on_play_pressed():
+	MusicLibrary.play_button()
 	$PreviewButton/PreviewAnim.play("press")
 	print("playing all bars")
 	play_all_bars()
 
 func _on_perfom_pressed():
 	emit_signal("perform_pressed")
+	MusicLibrary.play_button()
 	$PerformButton/PerformAnim.play("press")
 	
 func set_buttons_disabled(is_disabled):
@@ -78,19 +80,23 @@ func set_buttons_disabled(is_disabled):
 
 
 func _on_reset_pressed():
+	MusicLibrary.play_button()
 	$ResetButton/ResetAnim.play("press")
 	clear_all_bars()
 
 
 func _on_low_speed_pressed():
+	MusicLibrary.play_button_two()
 	set_bpm(80)
 
 
 func _on_medium_speed_pressed():
+	MusicLibrary.play_button_two()
 	set_bpm(120)
 
 
 func _on_high_speed_pressed():
+	MusicLibrary.play_button_two()
 	set_bpm(160)
 
 func set_bpm(speed):
