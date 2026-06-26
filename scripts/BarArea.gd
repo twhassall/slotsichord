@@ -30,6 +30,7 @@ func _get_drag_data(at_position):
 	#da ghost
 	var ghost = duplicate()
 	set_drag_preview(ghost)
+	MusicLibrary.play_pickup()
 
 	#give data - now as dict so we can check where it came from
 	#that way we can have different behaviour dragging from machine vs arrangement area

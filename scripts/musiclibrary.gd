@@ -25,6 +25,7 @@ var ui_player: AudioStreamPlayer
 var ui_drop = null
 var ui_button = null
 var ui_button_2 = null
+var ui_pickup = null
 
 
 func _ready():
@@ -122,7 +123,8 @@ func _ready():
 	ui_drop = load("res://assets/sounds/ui/ui_drop.ogg")
 	ui_button = load("res://assets/sounds/ui/button_press.mp3")
 	ui_button_2 = load("res://assets/sounds/ui/button_press_2.mp3")
-
+	ui_pickup = load("res://assets/sounds/ui/ui_pickup.ogg")
+	
 func generate_beat():
 	##range affect how often certain length of notes appear. We don't want too many rests.
 	var roll = randi_range(1, 100)
@@ -210,4 +212,8 @@ func play_button():
 
 func play_button_two():
 	chord_player.stream = ui_button_2
+	chord_player.play()
+	
+func play_pickup():
+	chord_player.stream = ui_pickup
 	chord_player.play()

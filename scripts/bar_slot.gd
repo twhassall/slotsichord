@@ -13,8 +13,6 @@ func _drop_data(at_position, data):
 		drop_bar(data)
 	elif data["type"] == "chord":
 		drop_chord(data)	
-	
-
 
 #cant find a way to check if the child is specifically a BarDisplay
 #so just checking for a method we know barDisplay has
