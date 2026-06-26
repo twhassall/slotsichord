@@ -3,8 +3,8 @@ extends Control
 
 
 @onready var lines_container = $Lines
-@onready var bpm_label = $BPMSlider/BPMLabel
-@onready var bpm_slider = $BPMSlider
+##@onready var bpm_label = $BPMSlider/BPMLabel
+##@onready var bpm_slider = $BPMSlider
 var slots = []
 
 signal perform_pressed

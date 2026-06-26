@@ -83,7 +83,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_084gh"]
 resource_name = "press"
-length = 0.39999999999999997
+length = 0.4
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -572,6 +572,9 @@ scale = Vector2(2, 2)
 texture = ExtResource("9_f18vj")
 hframes = 3
 vframes = 3
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1213721736]
+position = Vector2(-36, 324)
 
 [connection signal="pressed" from="SlotMachine/InsertCoinButton/InsertCoin" to="." method="_on_insert_coin_pressed"]
 [connection signal="pressed" from="Spin" to="." method="_on_spin_pressed"]
