@@ -16,20 +16,3 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_0xq38")
 script = ExtResource("1_2b17l")
-
-[node name="TextureRect" type="TextureRect" parent="." unique_id=1227399977]
-layout_mode = 2
-
-[node name="Chordarea" type="Control" parent="." unique_id=1141005902]
-layout_mode = 2
-mouse_filter = 2
-
-[node name="ChordLetter" type="TextureRect" parent="Chordarea" unique_id=1838387667]
-custom_minimum_size = Vector2(20, 20)
-layout_mode = 0
-offset_left = -1.0
-offset_top = 47.0
-offset_right = 34.0
-offset_bottom = 82.0
-scale = Vector2(2, 2)
-stretch_mode = 2

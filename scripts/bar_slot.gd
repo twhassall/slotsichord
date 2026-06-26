@@ -1,6 +1,7 @@
 extends PanelContainer
 var current_chord = ""
-@onready var chord_label = $Chordarea/ChordLetter
+@export var chord_box: Node2D
+
 #slots accet the drop
 func _can_drop_data(at_position, data):
 	#print("can drop here?", data.get("type"))
@@ -31,7 +32,7 @@ func _clear_existing_bar():
 			
 func clear_existing_chord():
 	current_chord = ""
-	chord_label.texture = null
+	chord_box.show_chord("")
 	var currentChord = get_node_or_null("ChordSprite")
 	if currentChord:
 		currentChord.queue_free()
@@ -65,10 +66,10 @@ func drop_bar(data):
 	
 func drop_chord(data):
 	var chord_name = data["chord_name"]
-	print("chord dropped" + chord_name)
 	current_chord = chord_name
-	chord_label.texture = MusicLibrary.chord_sprites[chord_name]
+	chord_box.show_chord(chord_name)
+
 
 func _clear_existing_chord():
 	current_chord = ""
-	chord_label.texture = null
+	chord_box.show_chord("")
