@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ey56bkqqmn33"]
 
 [ext_resource type="Texture2D" uid="uid://cdf6qqt0nlrnd" path="res://assets/sprites/performance/Juniper.png" id="1_c5t8m"]
-[ext_resource type="Script" uid="uid://dj6ixthfcoyre" path="res://testjuniper.gd" id="1_pr87d"]
+[ext_resource type="Script" uid="uid://dj6ixthfcoyre" path="res://scripts/testjuniper.gd" id="1_pr87d"]
 [ext_resource type="Texture2D" uid="uid://du2a0mra61e30" path="res://assets/sprites/performance/stage.png" id="3_pbtqv"]
 [ext_resource type="Texture2D" uid="uid://dh0knomf4mibe" path="res://assets/sprites/performance/musicStand.png" id="4_ynhj5"]
 [ext_resource type="PackedScene" uid="uid://cehonte1e660c" path="res://scenes/subScenes/audience.tscn" id="5_kfj3j"]

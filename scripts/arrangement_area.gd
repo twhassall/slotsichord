@@ -66,9 +66,9 @@ func _on_perfom_pressed():
 func set_buttons_disabled(is_disabled):
 	print("self is: ", self)
 	print("children: ", get_children())
-	$Preview.disabled = is_disabled
-	$Reset.disabled = is_disabled
-	$Perform.disabled = is_disabled
+	$PreviewButton/Preview.disabled = is_disabled
+	$ResetButton/Reset.disabled = is_disabled
+	$PerformButton/Perform.disabled = is_disabled
 
 
 func _on_reset_pressed():
