@@ -10,16 +10,12 @@ var slots = []
 signal perform_pressed
 
 func _ready():
-	bpm_label.text = str(MusicLibrary.bpm)
-
 
 	for line in lines_container.get_children():
 		var line_slots = []
 		for slot in line.get_children():
 			line_slots.append(slot)
 		slots.append(line_slots)
-	
-	bpm_slider.value = MusicLibrary.bpm	
 
 	$PreviewButton.frame=0
 	$PreviewButton.visible = true
@@ -57,10 +53,6 @@ func _on_play_pressed():
 	$PreviewButton/PreviewAnim.play("press")
 	print("playing all bars")
 	play_all_bars()
-	
-func _on_h_slider_value_changed(value: float):
-	MusicLibrary.bpm = value
-	bpm_label.text = str(value)
 
 func _on_perfom_pressed():
 	emit_signal("perform_pressed")
@@ -77,3 +69,18 @@ func set_buttons_disabled(is_disabled):
 func _on_reset_pressed():
 	$ResetButton/ResetAnim.play("press")
 	clear_all_bars()
+
+
+func _on_low_speed_pressed():
+	set_bpm(80)
+
+
+func _on_medium_speed_pressed():
+	set_bpm(120)
+
+
+func _on_high_speed_pressed():
+	set_bpm(160)
+
+func set_bpm(speed):
+	MusicLibrary.bpm = speed

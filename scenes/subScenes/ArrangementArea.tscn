@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://cm8xdbj5amfqs" path="res://assets/sprites/buttons/reset.png" id="5_bljxu"]
 [ext_resource type="Texture2D" uid="uid://b5pkastgx06lq" path="res://assets/sprites/buttons/perform.png" id="6_etmuu"]
 [ext_resource type="PackedScene" uid="uid://bmwscjo8qe6ix" path="res://scenes/subScenes/ChordBox.tscn" id="8_etmuu"]
+[ext_resource type="Texture2D" uid="uid://c1epgwvutecv2" path="res://assets/sprites/bpmplaceholder.png" id="9_bb7ac"]
 
 [sub_resource type="Animation" id="Animation_6jpjo"]
 length = 0.001
@@ -308,24 +309,6 @@ offset_bottom = 11.578949
 root_node = NodePath("../..")
 libraries/ = SubResource("AnimationLibrary_04m8t")
 
-[node name="BPMSlider" type="HSlider" parent="." unique_id=65646243]
-layout_mode = 0
-offset_left = 63.0
-offset_top = 613.0
-offset_right = 412.0
-offset_bottom = 634.0
-min_value = 50.0
-max_value = 250.0
-value = 50.0
-rounded = true
-
-[node name="BPMLabel" type="Label" parent="BPMSlider" unique_id=1373176318]
-layout_mode = 0
-offset_left = 11.0
-offset_top = 19.0
-offset_right = 51.0
-offset_bottom = 42.0
-
 [node name="ChordBoxes" type="Node2D" parent="." unique_id=955453880]
 
 [node name="ChordBox" parent="ChordBoxes" unique_id=1140346968 instance=ExtResource("8_etmuu")]
@@ -376,8 +359,33 @@ position = Vector2(250, 340)
 [node name="ChordBox16" parent="ChordBoxes" unique_id=1845585341 instance=ExtResource("8_etmuu")]
 position = Vector2(364, 340)
 
+[node name="LowSpeed" type="Sprite2D" parent="." unique_id=100270160]
+position = Vector2(69, 438)
+texture = ExtResource("9_bb7ac")
+
+[node name="LowSpeed" type="Button" parent="LowSpeed" unique_id=130014776]
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="MediumSpeed" type="Sprite2D" parent="." unique_id=1834600036]
+position = Vector2(196, 448)
+texture = ExtResource("9_bb7ac")
+
+[node name="MediumSpeed" type="Button" parent="MediumSpeed" unique_id=676933501]
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="HighSpeed" type="Sprite2D" parent="." unique_id=131521875]
+position = Vector2(342, 439)
+texture = ExtResource("9_bb7ac")
+
+[node name="HighSpeed" type="Button" parent="HighSpeed" unique_id=1827896252]
+offset_right = 8.0
+offset_bottom = 8.0
+
 [connection signal="pressed" from="PreviewButton/Preview" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="ResetButton/Reset" to="." method="_on_reset_pressed"]
 [connection signal="pressed" from="PerformButton/Perform" to="." method="_on_perfom_pressed"]
-[connection signal="changed" from="BPMSlider" to="." method="_on_h_slider_changed"]
-[connection signal="value_changed" from="BPMSlider" to="." method="_on_h_slider_value_changed"]
+[connection signal="pressed" from="LowSpeed/LowSpeed" to="." method="_on_low_speed_pressed"]
+[connection signal="pressed" from="MediumSpeed/MediumSpeed" to="." method="_on_medium_speed_pressed"]
+[connection signal="pressed" from="HighSpeed/HighSpeed" to="." method="_on_high_speed_pressed"]
