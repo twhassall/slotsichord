@@ -11,6 +11,8 @@ func _ready():
 func pan_to_performance():
 	$ArrangementArea.set_buttons_disabled(true)
 	$JuniperNode.set_buttons_disabled(true)
+	$TuneUp.play()
+	$Chatter.play()
 	
 	##moves the camera smoothly
 	var tween = create_tween()
@@ -31,8 +33,15 @@ func pan_to_performance():
 	
 	#magic timer
 	#this is where we can play audience noises if we have them
+	await get_tree().create_timer(2.0).timeout
+	##fade out sounds
+	var fade = create_tween()
+	fade.set_ease(Tween.EASE_IN_OUT)
+	fade.set_trans(Tween.TRANS_SINE)
+	fade.tween_property($TuneUp, "volume_db", -80.0, 1.0)
+	fade.parallel().tween_property($Chatter, "volume_db", -80.0, 4.0)
 	await get_tree().create_timer(0.5).timeout
-	performance()
+	await performance()
 	
 func performance():
 	#just call directly

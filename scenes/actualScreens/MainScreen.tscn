@@ -4,6 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://djv1omxsji6f1" path="res://scenes/subScenes/slot_machine.tscn" id="2_2t3k2"]
 [ext_resource type="PackedScene" uid="uid://g7nmx3jsyfp4" path="res://scenes/subScenes/ArrangementArea.tscn" id="3_qbncj"]
 [ext_resource type="PackedScene" uid="uid://ey56bkqqmn33" path="res://scenes/subScenes/performance.tscn" id="4_ajx71"]
+[ext_resource type="AudioStream" uid="uid://dyv7asgqiy31k" path="res://assets/sounds/performance/tuning.wav" id="5_keutf"]
+[ext_resource type="AudioStream" uid="uid://cqrw0u2ny5ml6" path="res://assets/sounds/performance/chatter.wav" id="6_3eo76"]
 
 [node name="MainScreen" type="Control" unique_id=1775278082]
 layout_mode = 3
@@ -33,3 +35,11 @@ offset_bottom = 35.0
 
 [node name="JuniperNode" parent="." unique_id=314397147 instance=ExtResource("4_ajx71")]
 position = Vector2(1326, 0)
+
+[node name="TuneUp" type="AudioStreamPlayer" parent="." unique_id=905848141]
+stream = ExtResource("5_keutf")
+volume_db = -15.0
+
+[node name="Chatter" type="AudioStreamPlayer" parent="." unique_id=623464975]
+stream = ExtResource("6_3eo76")
+volume_db = -10.0

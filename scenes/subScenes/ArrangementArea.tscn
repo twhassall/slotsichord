@@ -228,7 +228,7 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="PreviewButton" type="Sprite2D" parent="." unique_id=1624120683]
-position = Vector2(96, 400)
+position = Vector2(95.799995, 584.475)
 scale = Vector2(2.85, 2.85)
 texture = ExtResource("4_6jpjo")
 vframes = 2
@@ -245,7 +245,7 @@ offset_right = 25.263157
 offset_bottom = 11.228058
 
 [node name="ResetButton" type="Sprite2D" parent="." unique_id=1832780048]
-position = Vector2(384, 400)
+position = Vector2(383.8, 584.475)
 scale = Vector2(2.85, 2.85)
 texture = ExtResource("5_bljxu")
 vframes = 2
@@ -263,7 +263,7 @@ root_node = NodePath("../..")
 libraries/ = SubResource("AnimationLibrary_mgk2m")
 
 [node name="PerformButton" type="Sprite2D" parent="." unique_id=974749761]
-position = Vector2(246, 400)
+position = Vector2(245.79999, 584.475)
 scale = Vector2(2.85, 2.85)
 texture = ExtResource("6_etmuu")
 vframes = 2
@@ -283,9 +283,9 @@ libraries/ = SubResource("AnimationLibrary_04m8t")
 [node name="BPMSlider" type="HSlider" parent="." unique_id=65646243]
 layout_mode = 0
 offset_left = 48.0
-offset_top = 551.0
+offset_top = 507.0
 offset_right = 397.0
-offset_bottom = 572.0
+offset_bottom = 528.0
 min_value = 50.0
 max_value = 250.0
 value = 50.0
