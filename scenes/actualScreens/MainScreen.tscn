@@ -15,7 +15,7 @@ offset_bottom = 40.0
 script = ExtResource("1_hhyys")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=883540345]
-position = Vector2(750, 324)
+position = Vector2(124, 324)
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=270515992]
 layout_mode = 0

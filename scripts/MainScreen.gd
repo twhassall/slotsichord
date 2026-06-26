@@ -8,6 +8,14 @@ func _ready():
 	$ArrangementArea.perform_pressed.connect(pan_to_performance)
 	$JuniperNode.encore_pressed.connect(encore)
 	$JuniperNode.play_again_pressed.connect(on_play_again)
+	##connects to insert coin in slot_machine.gd
+	$SlotMachine.coin_inserted.connect(pan_to_game)
+	
+func pan_to_game():
+	var tween = create_tween()
+	tween.set_ease(Tween.EASE_IN_OUT)
+	tween.set_trans(Tween.TRANS_SINE)
+	tween.tween_property($Camera2D, "position", Vector2(750.0,324.0), 2.0)
 	
 func pan_to_performance():
 	$ArrangementArea.set_buttons_disabled(true)
@@ -98,7 +106,7 @@ func pan_back_to_start():
 	tween.set_ease(Tween.EASE_IN_OUT)
 	tween.set_trans(Tween.TRANS_SINE)
 	#obvs set this to wherever the actual start menu is
-	tween.tween_property($Camera2D, "position", Vector2(200.0,324.0), 2.0)
+	tween.tween_property($Camera2D, "position", Vector2(124.0,324.0), 2.0)
 	
 	#enable arrangement buttons
 	$ArrangementArea.set_buttons_disabled(false)

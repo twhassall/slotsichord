@@ -12,6 +12,8 @@ var spinSound
 var player: AudioStreamPlayer
 var spinNum
 
+signal coin_inserted
+
 func _ready():
 	##for random smoke animation
 	randomize()
@@ -170,4 +172,5 @@ func _on_insert_coin_pressed():
 	$SlotMachine/InsertCoinButton/InsertCoin.disabled = true
 	await get_tree().create_timer(1.2).timeout
 	start_slotmachine()
+	emit_signal("coin_inserted")
 	
