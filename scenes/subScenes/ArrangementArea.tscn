@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://d2j08jrs4jxki" path="res://assets/sprites/buttons/preview.png" id="4_6jpjo"]
 [ext_resource type="Texture2D" uid="uid://cm8xdbj5amfqs" path="res://assets/sprites/buttons/reset.png" id="5_bljxu"]
 [ext_resource type="Texture2D" uid="uid://b5pkastgx06lq" path="res://assets/sprites/buttons/perform.png" id="6_etmuu"]
-[ext_resource type="Texture2D" uid="uid://f5s7nxthsloc" path="res://assets/sprites/chords/ChordBox.png" id="8_etmuu"]
+[ext_resource type="PackedScene" uid="uid://bmwscjo8qe6ix" path="res://scenes/subScenes/ChordBox.tscn" id="8_etmuu"]
 
 [sub_resource type="Animation" id="Animation_6jpjo"]
 length = 0.001
@@ -146,7 +146,7 @@ position = Vector2(234, 360)
 texture = ExtResource("2_etmuu")
 
 [node name="Clef" type="Sprite2D" parent="." unique_id=1599659359]
-position = Vector2(9, 27)
+position = Vector2(0, 31)
 texture = ExtResource("3_6oaw7")
 
 [node name="Lines" type="Control" parent="." unique_id=1853830077]
@@ -164,17 +164,21 @@ offset_bottom = 55.0
 scale = Vector2(1.0554388, 1)
 theme_override_constants/separation = 0
 
-[node name="BarSlot" parent="Lines/Line1" unique_id=79171669 instance=ExtResource("3_o8ntw")]
+[node name="BarSlot" parent="Lines/Line1" unique_id=79171669 node_paths=PackedStringArray("chord_box") instance=ExtResource("3_o8ntw")]
 layout_mode = 2
+chord_box = NodePath("../../../ChordBoxes/ChordBox")
 
-[node name="BarSlot2" parent="Lines/Line1" unique_id=436051339 instance=ExtResource("3_o8ntw")]
+[node name="BarSlot2" parent="Lines/Line1" unique_id=436051339 node_paths=PackedStringArray("chord_box") instance=ExtResource("3_o8ntw")]
 layout_mode = 2
+chord_box = NodePath("../../../ChordBoxes/ChordBox2")
 
-[node name="BarSlot3" parent="Lines/Line1" unique_id=297862867 instance=ExtResource("3_o8ntw")]
+[node name="BarSlot3" parent="Lines/Line1" unique_id=297862867 node_paths=PackedStringArray("chord_box") instance=ExtResource("3_o8ntw")]
 layout_mode = 2
+chord_box = NodePath("../../../ChordBoxes/ChordBox3")
 
-[node name="BarSlot4" parent="Lines/Line1" unique_id=1256910018 instance=ExtResource("3_o8ntw")]
+[node name="BarSlot4" parent="Lines/Line1" unique_id=1256910018 node_paths=PackedStringArray("chord_box") instance=ExtResource("3_o8ntw")]
 layout_mode = 2
+chord_box = NodePath("../../../ChordBoxes/ChordBox4")
 
 [node name="Line2" type="HBoxContainer" parent="Lines" unique_id=742286735]
 layout_mode = 0
@@ -185,17 +189,21 @@ offset_bottom = 165.0
 scale = Vector2(1.055, 1.055)
 theme_override_constants/separation = 0
 
-[node name="BarSlot" parent="Lines/Line2" unique_id=334940245 instance=ExtResource("3_o8ntw")]
+[node name="BarSlot" parent="Lines/Line2" unique_id=334940245 node_paths=PackedStringArray("chord_box") instance=ExtResource("3_o8ntw")]
 layout_mode = 2
+chord_box = NodePath("../../../ChordBoxes/ChordBox5")
 
-[node name="BarSlot2" parent="Lines/Line2" unique_id=1767762684 instance=ExtResource("3_o8ntw")]
+[node name="BarSlot2" parent="Lines/Line2" unique_id=1767762684 node_paths=PackedStringArray("chord_box") instance=ExtResource("3_o8ntw")]
 layout_mode = 2
+chord_box = NodePath("../../../ChordBoxes/ChordBox6")
 
-[node name="BarSlot3" parent="Lines/Line2" unique_id=853251202 instance=ExtResource("3_o8ntw")]
+[node name="BarSlot3" parent="Lines/Line2" unique_id=853251202 node_paths=PackedStringArray("chord_box") instance=ExtResource("3_o8ntw")]
 layout_mode = 2
+chord_box = NodePath("../../../ChordBoxes/ChordBox7")
 
-[node name="BarSlot4" parent="Lines/Line2" unique_id=530347873 instance=ExtResource("3_o8ntw")]
+[node name="BarSlot4" parent="Lines/Line2" unique_id=530347873 node_paths=PackedStringArray("chord_box") instance=ExtResource("3_o8ntw")]
 layout_mode = 2
+chord_box = NodePath("../../../ChordBoxes/ChordBox8")
 
 [node name="Line3" type="HBoxContainer" parent="Lines" unique_id=1860241623]
 layout_mode = 0
@@ -206,17 +214,21 @@ offset_bottom = 275.0
 scale = Vector2(1.055, 1.055)
 theme_override_constants/separation = 0
 
-[node name="BarSlot" parent="Lines/Line3" unique_id=1539833092 instance=ExtResource("3_o8ntw")]
+[node name="BarSlot" parent="Lines/Line3" unique_id=1539833092 node_paths=PackedStringArray("chord_box") instance=ExtResource("3_o8ntw")]
 layout_mode = 2
+chord_box = NodePath("../../../ChordBoxes/ChordBox9")
 
-[node name="BarSlot2" parent="Lines/Line3" unique_id=1508435763 instance=ExtResource("3_o8ntw")]
+[node name="BarSlot2" parent="Lines/Line3" unique_id=1508435763 node_paths=PackedStringArray("chord_box") instance=ExtResource("3_o8ntw")]
 layout_mode = 2
+chord_box = NodePath("../../../ChordBoxes/ChordBox10")
 
-[node name="BarSlot3" parent="Lines/Line3" unique_id=1738891693 instance=ExtResource("3_o8ntw")]
+[node name="BarSlot3" parent="Lines/Line3" unique_id=1738891693 node_paths=PackedStringArray("chord_box") instance=ExtResource("3_o8ntw")]
 layout_mode = 2
+chord_box = NodePath("../../../ChordBoxes/ChordBox11")
 
-[node name="BarSlot4" parent="Lines/Line3" unique_id=839431984 instance=ExtResource("3_o8ntw")]
+[node name="BarSlot4" parent="Lines/Line3" unique_id=839431984 node_paths=PackedStringArray("chord_box") instance=ExtResource("3_o8ntw")]
 layout_mode = 2
+chord_box = NodePath("../../../ChordBoxes/ChordBox12")
 
 [node name="Line4" type="HBoxContainer" parent="Lines" unique_id=241021127]
 layout_mode = 0
@@ -227,17 +239,21 @@ offset_bottom = 385.0
 scale = Vector2(1.055, 1.055)
 theme_override_constants/separation = 0
 
-[node name="BarSlot" parent="Lines/Line4" unique_id=1901970957 instance=ExtResource("3_o8ntw")]
+[node name="BarSlot" parent="Lines/Line4" unique_id=1901970957 node_paths=PackedStringArray("chord_box") instance=ExtResource("3_o8ntw")]
 layout_mode = 2
+chord_box = NodePath("../../../ChordBoxes/ChordBox13")
 
-[node name="BarSlot2" parent="Lines/Line4" unique_id=913786397 instance=ExtResource("3_o8ntw")]
+[node name="BarSlot2" parent="Lines/Line4" unique_id=913786397 node_paths=PackedStringArray("chord_box") instance=ExtResource("3_o8ntw")]
 layout_mode = 2
+chord_box = NodePath("../../../ChordBoxes/ChordBox14")
 
-[node name="BarSlot3" parent="Lines/Line4" unique_id=1032252388 instance=ExtResource("3_o8ntw")]
+[node name="BarSlot3" parent="Lines/Line4" unique_id=1032252388 node_paths=PackedStringArray("chord_box") instance=ExtResource("3_o8ntw")]
 layout_mode = 2
+chord_box = NodePath("../../../ChordBoxes/ChordBox15")
 
-[node name="BarSlot4" parent="Lines/Line4" unique_id=1096468626 instance=ExtResource("3_o8ntw")]
+[node name="BarSlot4" parent="Lines/Line4" unique_id=1096468626 node_paths=PackedStringArray("chord_box") instance=ExtResource("3_o8ntw")]
 layout_mode = 2
+chord_box = NodePath("../../../ChordBoxes/ChordBox16")
 
 [node name="PreviewButton" type="Sprite2D" parent="." unique_id=1624120683]
 position = Vector2(95.799995, 579.475)
@@ -310,9 +326,55 @@ offset_top = 19.0
 offset_right = 51.0
 offset_bottom = 42.0
 
-[node name="ChordBox" type="Sprite2D" parent="." unique_id=112055820]
-position = Vector2(20, 59)
-texture = ExtResource("8_etmuu")
+[node name="ChordBoxes" type="Node2D" parent="." unique_id=955453880]
+
+[node name="ChordBox" parent="ChordBoxes" unique_id=1140346968 instance=ExtResource("8_etmuu")]
+position = Vector2(30, 10)
+
+[node name="ChordBox2" parent="ChordBoxes" unique_id=692969031 instance=ExtResource("8_etmuu")]
+position = Vector2(136, 10)
+
+[node name="ChordBox3" parent="ChordBoxes" unique_id=2086352339 instance=ExtResource("8_etmuu")]
+position = Vector2(250, 10)
+
+[node name="ChordBox4" parent="ChordBoxes" unique_id=1567835941 instance=ExtResource("8_etmuu")]
+position = Vector2(364, 10)
+
+[node name="ChordBox5" parent="ChordBoxes" unique_id=2059744264 instance=ExtResource("8_etmuu")]
+position = Vector2(30, 120)
+
+[node name="ChordBox6" parent="ChordBoxes" unique_id=2047655441 instance=ExtResource("8_etmuu")]
+position = Vector2(136, 120)
+
+[node name="ChordBox7" parent="ChordBoxes" unique_id=343264016 instance=ExtResource("8_etmuu")]
+position = Vector2(250, 120)
+
+[node name="ChordBox8" parent="ChordBoxes" unique_id=1959128089 instance=ExtResource("8_etmuu")]
+position = Vector2(364, 120)
+
+[node name="ChordBox9" parent="ChordBoxes" unique_id=1624565776 instance=ExtResource("8_etmuu")]
+position = Vector2(30, 230)
+
+[node name="ChordBox10" parent="ChordBoxes" unique_id=489111240 instance=ExtResource("8_etmuu")]
+position = Vector2(136, 230)
+
+[node name="ChordBox11" parent="ChordBoxes" unique_id=147017222 instance=ExtResource("8_etmuu")]
+position = Vector2(250, 230)
+
+[node name="ChordBox12" parent="ChordBoxes" unique_id=200373850 instance=ExtResource("8_etmuu")]
+position = Vector2(364, 230)
+
+[node name="ChordBox13" parent="ChordBoxes" unique_id=73240513 instance=ExtResource("8_etmuu")]
+position = Vector2(30, 340)
+
+[node name="ChordBox14" parent="ChordBoxes" unique_id=1274809829 instance=ExtResource("8_etmuu")]
+position = Vector2(136, 340)
+
+[node name="ChordBox15" parent="ChordBoxes" unique_id=352942505 instance=ExtResource("8_etmuu")]
+position = Vector2(250, 340)
+
+[node name="ChordBox16" parent="ChordBoxes" unique_id=1845585341 instance=ExtResource("8_etmuu")]
+position = Vector2(364, 340)
 
 [connection signal="pressed" from="PreviewButton/Preview" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="ResetButton/Reset" to="." method="_on_reset_pressed"]

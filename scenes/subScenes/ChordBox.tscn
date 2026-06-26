@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://bmwscjo8qe6ix"]
+
+[ext_resource type="Script" uid="uid://b6vjujsxpj7h4" path="res://scripts/chord_box.gd" id="1_f3rth"]
+[ext_resource type="Texture2D" uid="uid://f5s7nxthsloc" path="res://assets/sprites/chords/ChordBox.png" id="2_d765k"]
+
+[node name="ChordBox" type="Node2D" unique_id=1140346968]
+script = ExtResource("1_f3rth")
+
+[node name="Box" type="Sprite2D" parent="." unique_id=227010032]
+texture = ExtResource("2_d765k")
+
+[node name="Letter" type="Sprite2D" parent="." unique_id=1902158466]
