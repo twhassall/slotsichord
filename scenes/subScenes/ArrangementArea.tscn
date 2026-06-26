@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://d2j08jrs4jxki" path="res://assets/sprites/buttons/preview.png" id="4_6jpjo"]
 [ext_resource type="Texture2D" uid="uid://cm8xdbj5amfqs" path="res://assets/sprites/buttons/reset.png" id="5_bljxu"]
 [ext_resource type="Texture2D" uid="uid://b5pkastgx06lq" path="res://assets/sprites/buttons/perform.png" id="6_etmuu"]
+[ext_resource type="Texture2D" uid="uid://f5s7nxthsloc" path="res://assets/sprites/chords/ChordBox.png" id="8_etmuu"]
 
 [sub_resource type="Animation" id="Animation_6jpjo"]
 length = 0.001
@@ -25,7 +26,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_bljxu"]
 resource_name = "press"
-length = 0.4
+length = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -62,7 +63,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_bb7ac"]
 resource_name = "press"
-length = 0.39999999999999997
+length = 0.4
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -99,7 +100,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_btd2q"]
 resource_name = "press"
-length = 0.39999999999999997
+length = 0.4
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -296,6 +297,10 @@ offset_left = 11.0
 offset_top = 19.0
 offset_right = 51.0
 offset_bottom = 42.0
+
+[node name="ChordBox" type="Sprite2D" parent="." unique_id=112055820]
+position = Vector2(20, 59)
+texture = ExtResource("8_etmuu")
 
 [connection signal="pressed" from="PreviewButton/Preview" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="ResetButton/Reset" to="." method="_on_reset_pressed"]

@@ -8,6 +8,8 @@
 [ext_resource type="AudioStream" uid="uid://bfch551tvn7bh" path="res://assets/sounds/performance/cheer.wav" id="6_kfhwx"]
 [ext_resource type="AudioStream" uid="uid://3mbjbwbani12" path="res://assets/sounds/performance/clap.wav" id="7_scuq5"]
 [ext_resource type="AudioStream" uid="uid://brdw3ac3lpxo1" path="res://assets/sounds/performance/cricket.wav" id="8_ef5wx"]
+[ext_resource type="Texture2D" uid="uid://dp7466604jdjg" path="res://assets/sprites/buttons/encore.png" id="9_ef5wx"]
+[ext_resource type="Texture2D" uid="uid://ceor5ebm2vk61" path="res://assets/sprites/buttons/playagain.png" id="10_3sdyc"]
 
 [sub_resource type="Animation" id="Animation_c5t8m"]
 length = 0.8
@@ -48,6 +50,80 @@ _data = {
 &"conduct": SubResource("Animation_pr87d")
 }
 
+[sub_resource type="Animation" id="Animation_ef5wx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_3sdyc"]
+resource_name = "press"
+length = 0.39999999999999997
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [1, 0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tqrrd"]
+_data = {
+&"RESET": SubResource("Animation_ef5wx"),
+&"press": SubResource("Animation_3sdyc")
+}
+
+[sub_resource type="Animation" id="Animation_36eeh"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_og6on"]
+resource_name = "press"
+length = 0.39999999999999997
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [1, 0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tgwtl"]
+_data = {
+&"RESET": SubResource("Animation_36eeh"),
+&"press": SubResource("Animation_og6on")
+}
+
 [node name="JuniperNode" type="Node2D" unique_id=314397147]
 script = ExtResource("1_pr87d")
 
@@ -71,12 +147,6 @@ hframes = 7
 [node name="JuniperAnimation" type="AnimationPlayer" parent="Juniper" unique_id=1559109462]
 root_node = NodePath("../..")
 libraries/ = SubResource("AnimationLibrary_pbtqv")
-
-[node name="MakeHerMove" type="Button" parent="." unique_id=2143887782]
-offset_left = 523.0
-offset_top = -108.0
-offset_right = 583.0
-offset_bottom = -52.0
 
 [node name="MusicStand" type="Sprite2D" parent="." unique_id=1457798509]
 position = Vector2(327, 310)
@@ -120,4 +190,39 @@ stream = ExtResource("7_scuq5")
 [node name="cricketSound" type="AudioStreamPlayer" parent="." unique_id=1525729023]
 stream = ExtResource("8_ef5wx")
 
-[connection signal="pressed" from="MakeHerMove" to="." method="_on_make_her_move_pressed"]
+[node name="EncoreButton" type="Sprite2D" parent="." unique_id=200918739]
+position = Vector2(230.00002, 605)
+scale = Vector2(3, 3)
+texture = ExtResource("9_ef5wx")
+vframes = 2
+frame = 1
+
+[node name="Encore" type="Button" parent="EncoreButton" unique_id=1352490129]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -22.000004
+offset_top = -10.3333435
+offset_right = 22.333324
+offset_bottom = 9.3333435
+
+[node name="EncoreAnim" type="AnimationPlayer" parent="EncoreButton" unique_id=1282108966]
+libraries/ = SubResource("AnimationLibrary_tqrrd")
+
+[node name="PlayAgainButton" type="Sprite2D" parent="." unique_id=1192916358]
+position = Vector2(414, 593)
+scale = Vector2(3, 3)
+texture = ExtResource("10_3sdyc")
+vframes = 2
+frame = 1
+
+[node name="PlayAgainAnim" type="AnimationPlayer" parent="PlayAgainButton" unique_id=1639303942]
+libraries/ = SubResource("AnimationLibrary_tgwtl")
+
+[node name="PlayAgain" type="Button" parent="PlayAgainButton" unique_id=1236419239]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -18.666668
+offset_top = -13.0
+offset_right = 19.33334
+offset_bottom = 14.0
+
+[connection signal="pressed" from="EncoreButton/Encore" to="." method="_on_encore_pressed"]
+[connection signal="pressed" from="PlayAgainButton/PlayAgain" to="." method="_on_play_again_pressed"]

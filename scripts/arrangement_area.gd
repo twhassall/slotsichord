@@ -22,8 +22,11 @@ func _ready():
 	bpm_slider.value = MusicLibrary.bpm	
 
 	$PreviewButton.frame=0
+	$PreviewButton.visible = true
 	$ResetButton.frame=0
+	$ResetButton.visible = true
 	$PerformButton.frame=0
+	$PerformButton.visible = true
 
 func play_all_bars():
 	for line in slots:
