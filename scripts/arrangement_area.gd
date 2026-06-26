@@ -25,20 +25,34 @@ func _ready():
 	$PerformButton.visible = true
 
 func play_all_bars():
+	#make a list of all slots
+	var all_slots = []
 	for line in slots:
 		for bit in line:
-			var bar = bit.get_bar_data()
-			var chord = bit.current_chord
+			all_slots.append(bit)
 
-			if chord != "":
-				MusicLibrary.play_chord(chord)
-			
-			#time based on bpm just pause if no bar
-			#adjust the chord sound itself if chord sound isnt long enough
-			if bar.is_empty():
-				await get_tree().create_timer(MusicLibrary.beat_duration() * 4).timeout
-			else:	
-				await MusicLibrary.play_bar(bar)
+	# find the index of the last slot with any bar or chord
+	var last_index =-1
+	
+	for index in range(all_slots.size()):
+		
+		var bit = all_slots[index]
+		if not bit.get_bar_data().is_empty() or bit.current_chord != "":
+			last_index = index
+
+	#play p to the end (+1 as arrays start at 0)
+	for i in range(last_index + 1):
+		var bit = all_slots[i]
+		var bar = bit.get_bar_data()
+		var chord = bit.current_chord
+
+		if chord != "":
+			MusicLibrary.play_chord(chord)
+
+		if bar.is_empty():
+			await get_tree().create_timer(MusicLibrary.beat_duration() * 4).timeout
+		else:
+			await MusicLibrary.play_bar(bar)
 
 func clear_all_bars():
 	for line in slots:
