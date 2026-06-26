@@ -257,7 +257,7 @@ layout_mode = 2
 chord_box = NodePath("../../../ChordBoxes/ChordBox16")
 
 [node name="PreviewButton" type="Sprite2D" parent="." unique_id=1624120683]
-position = Vector2(95.799995, 579.475)
+position = Vector2(95.799995, 561.05)
 scale = Vector2(2.85, 2.85)
 texture = ExtResource("4_6jpjo")
 vframes = 2
@@ -272,9 +272,10 @@ offset_left = -24.912281
 offset_top = -10.526306
 offset_right = 25.263157
 offset_bottom = 11.228058
+metadata/_edit_use_anchors_ = true
 
 [node name="ResetButton" type="Sprite2D" parent="." unique_id=1832780048]
-position = Vector2(383.8, 579.475)
+position = Vector2(383.8, 561.05)
 scale = Vector2(2.85, 2.85)
 texture = ExtResource("5_bljxu")
 vframes = 2
@@ -292,7 +293,7 @@ root_node = NodePath("../..")
 libraries/ = SubResource("AnimationLibrary_mgk2m")
 
 [node name="PerformButton" type="Sprite2D" parent="." unique_id=974749761]
-position = Vector2(245.79999, 579.475)
+position = Vector2(245.79999, 561.05)
 scale = Vector2(2.85, 2.85)
 texture = ExtResource("6_etmuu")
 vframes = 2

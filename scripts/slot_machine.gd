@@ -19,6 +19,8 @@ func _ready():
 	
 	spinNum = 0
 	$SpinsLeft.frame = 0
+	
+	$SlotMachine/InsertCoinButton.frame = 0
 
 	player = AudioStreamPlayer.new()
 	add_child(player)
@@ -150,6 +152,7 @@ func reset_slotmachine():
 	clear_all_bars()
 	$Spin.disabled = false
 	$SlotMachine/InsertCoinButton/InsertCoin.disabled = false
+	$SlotMachine/InsertCoinButton.frame = 0
 	
 func start_slotmachine():
 	clear_all_bars()
