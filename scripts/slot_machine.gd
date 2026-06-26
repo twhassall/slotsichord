@@ -29,10 +29,7 @@ func _ready():
 	reel3.texture = MusicLibrary.beat_sprites["crot_r"]
 	reel4.texture = MusicLibrary.beat_sprites["crot_r"]
 	
-	#test code - REMOVE THIS
-	for i in range(5):
-		
-		render_bar(MusicLibrary.generate_bar())
+
 
 func random_sprite_key():
 	return MusicLibrary.beat_sprites.keys().pick_random()
