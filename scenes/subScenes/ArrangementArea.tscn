@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b3n7u1kht32pk" path="res://scripts/arrangement_area.gd" id="1_t53rw"]
 [ext_resource type="Texture2D" uid="uid://bveat4ikjkfib" path="res://assets/sprites/musicSheet.png" id="2_gmnrp"]
+[ext_resource type="Texture2D" uid="uid://b31v6x8fljhs0" path="res://assets/sprites/trebleclef.png" id="3_6oaw7"]
 [ext_resource type="PackedScene" uid="uid://but188dhkcmpn" path="res://scenes/subScenes/BarSlot.tscn" id="3_o8ntw"]
 
 [node name="ArrangementArea" type="Control" unique_id=2060967160]
@@ -16,6 +17,10 @@ script = ExtResource("1_t53rw")
 [node name="Manuscript" type="Sprite2D" parent="." unique_id=1041215718]
 position = Vector2(234, 111)
 texture = ExtResource("2_gmnrp")
+
+[node name="Clef" type="Sprite2D" parent="." unique_id=1599659359]
+position = Vector2(9, 27)
+texture = ExtResource("3_6oaw7")
 
 [node name="Lines" type="Control" parent="." unique_id=1853830077]
 anchors_preset = 0
