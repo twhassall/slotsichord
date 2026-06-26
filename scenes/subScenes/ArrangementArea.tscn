@@ -158,10 +158,10 @@ mouse_filter = 2
 
 [node name="Line1" type="HBoxContainer" parent="Lines" unique_id=2119468458]
 layout_mode = 0
-offset_left = 9.0
-offset_top = 5.0
+offset_left = 9.000001
+offset_top = -19.0
 offset_right = 433.0
-offset_bottom = 55.0
+offset_bottom = 81.0
 scale = Vector2(1.0554388, 1)
 theme_override_constants/separation = 0
 
@@ -183,10 +183,10 @@ chord_box = NodePath("../../../ChordBoxes/ChordBox4")
 
 [node name="Line2" type="HBoxContainer" parent="Lines" unique_id=742286735]
 layout_mode = 0
-offset_left = 9.0
-offset_top = 115.0
+offset_left = 9.000001
+offset_top = 88.0
 offset_right = 433.0
-offset_bottom = 165.0
+offset_bottom = 188.0
 scale = Vector2(1.055, 1.055)
 theme_override_constants/separation = 0
 
@@ -208,10 +208,10 @@ chord_box = NodePath("../../../ChordBoxes/ChordBox8")
 
 [node name="Line3" type="HBoxContainer" parent="Lines" unique_id=1860241623]
 layout_mode = 0
-offset_left = 9.0
-offset_top = 225.0
+offset_left = 9.000001
+offset_top = 198.0
 offset_right = 433.0
-offset_bottom = 275.0
+offset_bottom = 298.0
 scale = Vector2(1.055, 1.055)
 theme_override_constants/separation = 0
 
@@ -233,10 +233,10 @@ chord_box = NodePath("../../../ChordBoxes/ChordBox12")
 
 [node name="Line4" type="HBoxContainer" parent="Lines" unique_id=241021127]
 layout_mode = 0
-offset_left = 9.0
-offset_top = 335.0
+offset_left = 9.000001
+offset_top = 308.00003
 offset_right = 433.0
-offset_bottom = 385.0
+offset_bottom = 408.00003
 scale = Vector2(1.055, 1.055)
 theme_override_constants/separation = 0
 
@@ -313,52 +313,52 @@ libraries/ = SubResource("AnimationLibrary_04m8t")
 [node name="ChordBoxes" type="Node2D" parent="." unique_id=955453880]
 
 [node name="ChordBox" parent="ChordBoxes" unique_id=1140346968 instance=ExtResource("8_etmuu")]
-position = Vector2(30, 10)
+position = Vector2(21, 6)
 
 [node name="ChordBox2" parent="ChordBoxes" unique_id=692969031 instance=ExtResource("8_etmuu")]
-position = Vector2(136, 10)
+position = Vector2(133, 6)
 
 [node name="ChordBox3" parent="ChordBoxes" unique_id=2086352339 instance=ExtResource("8_etmuu")]
-position = Vector2(250, 10)
+position = Vector2(246, 6)
 
 [node name="ChordBox4" parent="ChordBoxes" unique_id=1567835941 instance=ExtResource("8_etmuu")]
-position = Vector2(364, 10)
+position = Vector2(359, 6)
 
 [node name="ChordBox5" parent="ChordBoxes" unique_id=2059744264 instance=ExtResource("8_etmuu")]
-position = Vector2(30, 120)
+position = Vector2(21, 116)
 
 [node name="ChordBox6" parent="ChordBoxes" unique_id=2047655441 instance=ExtResource("8_etmuu")]
-position = Vector2(136, 120)
+position = Vector2(133, 116)
 
 [node name="ChordBox7" parent="ChordBoxes" unique_id=343264016 instance=ExtResource("8_etmuu")]
-position = Vector2(250, 120)
+position = Vector2(246, 116)
 
 [node name="ChordBox8" parent="ChordBoxes" unique_id=1959128089 instance=ExtResource("8_etmuu")]
-position = Vector2(364, 120)
+position = Vector2(359, 116)
 
 [node name="ChordBox9" parent="ChordBoxes" unique_id=1624565776 instance=ExtResource("8_etmuu")]
-position = Vector2(30, 230)
+position = Vector2(21, 226)
 
 [node name="ChordBox10" parent="ChordBoxes" unique_id=489111240 instance=ExtResource("8_etmuu")]
-position = Vector2(136, 230)
+position = Vector2(133, 226)
 
 [node name="ChordBox11" parent="ChordBoxes" unique_id=147017222 instance=ExtResource("8_etmuu")]
-position = Vector2(250, 230)
+position = Vector2(246, 226)
 
 [node name="ChordBox12" parent="ChordBoxes" unique_id=200373850 instance=ExtResource("8_etmuu")]
-position = Vector2(364, 230)
+position = Vector2(359, 226)
 
 [node name="ChordBox13" parent="ChordBoxes" unique_id=73240513 instance=ExtResource("8_etmuu")]
-position = Vector2(30, 340)
+position = Vector2(21, 336)
 
 [node name="ChordBox14" parent="ChordBoxes" unique_id=1274809829 instance=ExtResource("8_etmuu")]
-position = Vector2(136, 340)
+position = Vector2(138, 336)
 
 [node name="ChordBox15" parent="ChordBoxes" unique_id=352942505 instance=ExtResource("8_etmuu")]
-position = Vector2(250, 340)
+position = Vector2(241, 336)
 
 [node name="ChordBox16" parent="ChordBoxes" unique_id=1845585341 instance=ExtResource("8_etmuu")]
-position = Vector2(364, 340)
+position = Vector2(359, 336)
 
 [node name="LowSpeed" type="Sprite2D" parent="." unique_id=100270160]
 position = Vector2(69, 438)

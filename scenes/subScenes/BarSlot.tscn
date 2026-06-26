@@ -19,5 +19,5 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_0xq38")
 script = ExtResource("1_2b17l")
 
 [node name="Rest" type="Sprite2D" parent="." unique_id=1649063362]
-position = Vector2(53, 19)
+position = Vector2(53, 45)
 texture = ExtResource("2_7auiu")
