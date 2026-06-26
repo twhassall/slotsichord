@@ -42,6 +42,8 @@ func drop_bar(data):
 	var came_from_bar = data["source_bar"]
 	var parent_type = came_from_bar.get_parent()
 	
+	set_rest_visible(false)
+	
 	print("drop data: ",data)
 	print("bar data: ", bar_data)
 	print("came from bar: ", came_from_bar)
@@ -52,6 +54,7 @@ func drop_bar(data):
 	#if we are dragging from a slot then we are moving, so remove it from that vbar
 	if parent_type.has_method("_drop_data"):
 		came_from_bar.queue_free()
+		parent_type.set_rest_visible(true)
 		
 	var barDisplay = load("res://scenes/subScenes/BarArea.tscn")
 	var thisBar = barDisplay.instantiate()
@@ -73,3 +76,9 @@ func drop_chord(data):
 func _clear_existing_chord():
 	current_chord = ""
 	chord_box.show_chord("")
+	
+func set_rest_visible(visible):
+	if visible:
+		$Rest.modulate.a = 256.0
+	else:
+		$Rest.modulate.a = 0.0

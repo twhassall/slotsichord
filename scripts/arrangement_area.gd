@@ -29,10 +29,7 @@ func play_all_bars():
 		for bit in line:
 			var bar = bit.get_bar_data()
 			var chord = bit.current_chord
-			#we can change this - currently just skips empty bars
-			if bar.is_empty() and chord == "":
-				continue
-				
+
 			if chord != "":
 				MusicLibrary.play_chord(chord)
 			

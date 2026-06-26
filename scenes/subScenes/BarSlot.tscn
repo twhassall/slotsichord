@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://but188dhkcmpn"]
 
 [ext_resource type="Script" uid="uid://dtfsrppg6uquv" path="res://scripts/bar_slot.gd" id="1_2b17l"]
+[ext_resource type="Texture2D" uid="uid://ds434p6wisfms" path="res://assets/sprites/wholeRest.png" id="2_7auiu"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0xq38"]
 bg_color = Color(0, 0, 0, 0)
@@ -16,3 +17,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_0xq38")
 script = ExtResource("1_2b17l")
+
+[node name="Rest" type="Sprite2D" parent="." unique_id=1649063362]
+position = Vector2(53, 19)
+texture = ExtResource("2_7auiu")
