@@ -19,7 +19,7 @@ func _ready():
 	player = AudioStreamPlayer.new()
 	add_child(player)
 	
-	spinSound = load("res://assets/sounds/slotMachineSpin.wav")
+	spinSound = load("res://assets/sounds/slotMachine/slotMachineSpin.wav")
 	reel1.texture = MusicLibrary.beat_sprites["crot_r"]
 	reel2.texture = MusicLibrary.beat_sprites["crot_r"]
 	reel3.texture = MusicLibrary.beat_sprites["crot_r"]

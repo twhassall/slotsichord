@@ -73,10 +73,10 @@ root_node = NodePath("../..")
 libraries/ = SubResource("AnimationLibrary_pbtqv")
 
 [node name="MakeHerMove" type="Button" parent="." unique_id=2143887782]
-offset_left = 322.0
-offset_top = 19.0
-offset_right = 382.0
-offset_bottom = 75.0
+offset_left = 523.0
+offset_top = -108.0
+offset_right = 583.0
+offset_bottom = -52.0
 
 [node name="MusicStand" type="Sprite2D" parent="." unique_id=1457798509]
 position = Vector2(327, 310)

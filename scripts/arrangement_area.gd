@@ -21,6 +21,10 @@ func _ready():
 	
 	bpm_slider.value = MusicLibrary.bpm	
 
+	$PreviewButton.frame=0
+	$ResetButton.frame=0
+	$PerformButton.frame=0
+
 func play_all_bars():
 	for line in slots:
 		for bit in line:
@@ -47,15 +51,17 @@ func clear_all_bars():
 			bit.clear_existing_chord()
 			
 func _on_play_pressed():
+	$PreviewButton/PreviewAnim.play("press")
 	print("playing all bars")
 	play_all_bars()
-
+	
 func _on_h_slider_value_changed(value: float):
 	MusicLibrary.bpm = value
 	bpm_label.text = str(value)
 
 func _on_perfom_pressed():
 	emit_signal("perform_pressed")
+	$PerformButton/PerformAnim.play("press")
 	
 func set_buttons_disabled(is_disabled):
 	print("self is: ", self)
@@ -66,4 +72,5 @@ func set_buttons_disabled(is_disabled):
 
 
 func _on_reset_pressed():
+	$ResetButton/ResetAnim.play("press")
 	clear_all_bars()
