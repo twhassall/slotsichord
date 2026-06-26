@@ -205,21 +205,22 @@ func play_chord(chord_name):
 	chord_player.play()
 	
 func play_drop():
-	chord_player.stream = ui_drop
+	ui_player.stream = ui_drop
 	ui_player.play()
 	
 func play_button():
-	chord_player.stream = ui_button
+	print("goop")
+	ui_player.stream = ui_button
 	ui_player.play()
 
 func play_button_two():
-	chord_player.stream = ui_button_2
+	ui_player.stream = ui_button_2
 	ui_player.play()
 	
 func play_pickup():
-	chord_player.stream = ui_pickup
+	ui_player.stream = ui_pickup
 	ui_player.play()
 	
 func play_mouseover():
-	chord_player.stream = ui_mouseover
+	ui_player.stream = ui_mouseover
 	ui_player.play()
