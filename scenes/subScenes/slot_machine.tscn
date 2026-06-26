@@ -3,49 +3,14 @@
 [ext_resource type="Script" uid="uid://u4yqnvewcb63" path="res://scripts/slot_machine.gd" id="1_f0c0l"]
 [ext_resource type="Texture2D" uid="uid://cpj8dgkgq0x4d" path="res://assets/sprites/slotmachine/slot_machine.png" id="2_ava31"]
 [ext_resource type="Texture2D" uid="uid://dngtl16blxy04" path="res://assets/sprites/slotmachine/LeverSpriteSheet.png" id="3_r8ptc"]
+[ext_resource type="Texture2D" uid="uid://ddne1sqh5elpd" path="res://assets/sprites/buttons/insertcoin.png" id="4_pn73r"]
 [ext_resource type="Texture2D" uid="uid://cayws40w4atsk" path="res://assets/sprites/slotmachine/smoke.png" id="4_r8ptc"]
 [ext_resource type="AudioStream" uid="uid://bhrvjsy3gkejy" path="res://assets/sounds/slotMachine/slotMachineSpin.wav" id="5_0xq38"]
 [ext_resource type="Texture2D" uid="uid://l5vwkxn64tvp" path="res://assets/sprites/slotmachine/slotMachineBlur.png" id="5_pt82j"]
 [ext_resource type="AudioStream" uid="uid://cmoyf4u5rd63s" path="res://assets/sounds/slotMachine/slotMachineCrank.wav" id="6_degk7"]
+[ext_resource type="Texture2D" uid="uid://4n5h3wno47xv" path="res://assets/sprites/slotmachine/funnel.png" id="6_k06gv"]
 [ext_resource type="PackedScene" uid="uid://bircwyj85eo7a" path="res://scenes/subScenes/ChordSprite.tscn" id="8_lq40k"]
 [ext_resource type="Texture2D" uid="uid://cljo0h0xvjts0" path="res://assets/sprites/slotmachine/spinsleft.png" id="9_f18vj"]
-
-[sub_resource type="Animation" id="Animation_ava31"]
-resource_name = "Pull"
-length = 2.2666667
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("SlotMachine/Crank:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.4, 1.6, 1.8, 2, 2.2),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3, 4, 5, 4, 3, 2, 1, 0]
-}
-
-[sub_resource type="Animation" id="Animation_r8ptc"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("SlotMachine/Crank:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_0xq38"]
-_data = {
-&"Pull": SubResource("Animation_ava31"),
-&"RESET": SubResource("Animation_r8ptc")
-}
 
 [sub_resource type="Animation" id="Animation_0xq38"]
 length = 0.001
@@ -99,6 +64,116 @@ _data = {
 &"RESET": SubResource("Animation_0xq38"),
 &"smoke1": SubResource("Animation_degk7"),
 &"smoke2": SubResource("Animation_pt82j")
+}
+
+[sub_resource type="Animation" id="Animation_plc8i"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_084gh"]
+resource_name = "press"
+length = 0.39999999999999997
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [1, 0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_k1jfg"]
+_data = {
+&"RESET": SubResource("Animation_plc8i"),
+&"press": SubResource("Animation_084gh")
+}
+
+[sub_resource type="Animation" id="Animation_ava31"]
+resource_name = "Pull"
+length = 2.2666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SlotMachine/Crank:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.4, 1.6, 1.8, 2, 2.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 4, 3, 2, 1, 0]
+}
+
+[sub_resource type="Animation" id="Animation_r8ptc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SlotMachine/Crank:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0xq38"]
+_data = {
+&"Pull": SubResource("Animation_ava31"),
+&"RESET": SubResource("Animation_r8ptc")
+}
+
+[sub_resource type="Animation" id="Animation_8jvq5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_g46q2"]
+resource_name = "drop"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 11]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7t2ew"]
+_data = {
+&"RESET": SubResource("Animation_8jvq5"),
+&"drop": SubResource("Animation_g46q2")
 }
 
 [sub_resource type="Animation" id="Animation_lq40k"]
@@ -261,21 +336,13 @@ offset_bottom = 40.0
 script = ExtResource("1_f0c0l")
 
 [node name="SlotMachine" type="Sprite2D" parent="." unique_id=84764454]
-position = Vector2(339, 326)
+position = Vector2(186.65, 323.31)
 scale = Vector2(4.25817, 4.2581697)
 texture = ExtResource("2_ava31")
 
-[node name="Crank" type="Sprite2D" parent="SlotMachine" unique_id=1823926421]
-position = Vector2(55.188026, -14.090558)
-texture = ExtResource("3_r8ptc")
-hframes = 6
-
-[node name="CrankAnimation" type="AnimationPlayer" parent="SlotMachine/Crank" unique_id=1521356991]
-root_node = NodePath("../../..")
-libraries/ = SubResource("AnimationLibrary_0xq38")
-
 [node name="CiggySmoke" type="Sprite2D" parent="SlotMachine" unique_id=109417282]
-position = Vector2(23.719, 6.904)
+position = Vector2(58.66839, 6.903908)
+scale = Vector2(0.99999994, 0.99999994)
 texture = ExtResource("4_r8ptc")
 hframes = 12
 vframes = 2
@@ -283,6 +350,43 @@ vframes = 2
 [node name="CiggyAnimation" type="AnimationPlayer" parent="SlotMachine/CiggySmoke" unique_id=666382503]
 root_node = NodePath("../../..")
 libraries/ = SubResource("AnimationLibrary_lq40k")
+
+[node name="InsertCoinButton" type="Sprite2D" parent="SlotMachine" unique_id=577213112]
+position = Vector2(-64.969215, 46.89573)
+scale = Vector2(0.99995995, 0.99996006)
+texture = ExtResource("4_pn73r")
+vframes = 2
+frame = 1
+
+[node name="InsertCoinAnimation" type="AnimationPlayer" parent="SlotMachine/InsertCoinButton" unique_id=679012198]
+libraries/ = SubResource("AnimationLibrary_k1jfg")
+
+[node name="InsertCoin" type="Button" parent="SlotMachine/InsertCoinButton" unique_id=1327243574]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -21.841248
+offset_top = -15.265388
+offset_right = 21.606384
+offset_bottom = 16.90934
+
+[node name="Crank" type="Sprite2D" parent="SlotMachine" unique_id=1823926421]
+position = Vector2(90.73146, -14.090557)
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("3_r8ptc")
+hframes = 6
+
+[node name="CrankAnimation" type="AnimationPlayer" parent="SlotMachine/Crank" unique_id=1521356991]
+root_node = NodePath("../../..")
+libraries/ = SubResource("AnimationLibrary_0xq38")
+
+[node name="Funnel" type="Sprite2D" parent="." unique_id=2081413526]
+position = Vector2(-94, 161.445)
+scale = Vector2(4.2579994, 4.2579994)
+texture = ExtResource("6_k06gv")
+hframes = 4
+vframes = 3
+
+[node name="CoinDrop" type="AnimationPlayer" parent="Funnel" unique_id=2063157806]
+libraries/ = SubResource("AnimationLibrary_7t2ew")
 
 [node name="Reel1" type="TextureRect" parent="." unique_id=1036060400]
 layout_mode = 0
@@ -469,4 +573,5 @@ texture = ExtResource("9_f18vj")
 hframes = 3
 vframes = 3
 
+[connection signal="pressed" from="SlotMachine/InsertCoinButton/InsertCoin" to="." method="_on_insert_coin_pressed"]
 [connection signal="pressed" from="Spin" to="." method="_on_spin_pressed"]

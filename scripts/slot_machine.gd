@@ -17,8 +17,8 @@ func _ready():
 	randomize()
 	smoke_loop()
 	
-	spinNum = 8
-	$SpinsLeft.frame = 8
+	spinNum = 0
+	$SpinsLeft.frame = 0
 
 	player = AudioStreamPlayer.new()
 	add_child(player)
@@ -148,10 +148,23 @@ func smoke_loop():
 
 func reset_slotmachine():
 	clear_all_bars()
-	spinNum = 8
+	$Spin.disabled = false
+	$SlotMachine/InsertCoinButton/InsertCoin.disabled = false
+	
+func start_slotmachine():
+	clear_all_bars()
+	spinNum = 8 
 	$SpinsLeft.frame = 8
 	$Spin.disabled = false
-		
+	
 func clear_all_bars():
 	for bar in barOuputarea.get_children():
 		bar.queue_free()
+
+func _on_insert_coin_pressed():
+	$SlotMachine/InsertCoinButton/InsertCoinAnimation.play("press")
+	$Funnel/CoinDrop.play("drop")
+	$SlotMachine/InsertCoinButton/InsertCoin.disabled = true
+	await get_tree().create_timer(1.2).timeout
+	start_slotmachine()
+	
