@@ -10,11 +10,15 @@ extends Control
 var current_bar = []
 var spinSound
 var player: AudioStreamPlayer
+var spinNum
 
 func _ready():
 	##for random smoke animation
 	randomize()
 	smoke_loop()
+	
+	spinNum = 8
+	$SpinsLeft.frame = 8
 
 	player = AudioStreamPlayer.new()
 	add_child(player)
@@ -117,6 +121,7 @@ func _on_spin_pressed():
 	$SlotMachine/Crank/CrankAnimation.play("Pull")
 	$crankSound.play()
 	await get_tree().create_timer(0.3).timeout
+	$SpinsLeft.frame -= 1
 	$spinSound.play()
 	await get_tree().create_timer(0.3).timeout
 	await spin_all_reels(current_bar)
@@ -125,6 +130,10 @@ func _on_spin_pressed():
 	print (current_bar)
 	
 	is_spinning = false
+	
+	spinNum -= 1
+	if spinNum == 0:
+		$Spin.disabled = true
 
 func render_bar(bar):
 	var sprites = MusicLibrary.bar_to_sprites(bar)

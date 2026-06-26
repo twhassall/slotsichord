@@ -29,7 +29,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_pr87d"]
 resource_name = "conduct"
-length = 0.7
+length = 0.8
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -41,13 +41,31 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [0, 1, 2, 4, 3, 2, 1, 0]
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+
+[sub_resource type="Animation" id="Animation_tqrrd"]
+resource_name = "idle"
+length = 0.39999999999999997
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Juniper:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 8, 9, 10]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_pbtqv"]
 _data = {
 &"RESET": SubResource("Animation_c5t8m"),
-&"conduct": SubResource("Animation_pr87d")
+&"conduct": SubResource("Animation_pr87d"),
+&"idle": SubResource("Animation_tqrrd")
 }
 
 [sub_resource type="Animation" id="Animation_ef5wx"]
@@ -142,7 +160,8 @@ texture = ExtResource("3_pbtqv")
 position = Vector2(246.00002, 211.00002)
 scale = Vector2(5, 5)
 texture = ExtResource("1_c5t8m")
-hframes = 7
+hframes = 8
+vframes = 2
 
 [node name="JuniperAnimation" type="AnimationPlayer" parent="Juniper" unique_id=1559109462]
 root_node = NodePath("../..")
