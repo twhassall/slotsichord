@@ -59,6 +59,7 @@ func clear_all_bars():
 		for bit in line:
 			bit._clear_existing_bar()
 			bit.clear_existing_chord()
+			bit.set_rest_visible(true)
 			
 func _on_play_pressed():
 	MusicLibrary.play_button()
