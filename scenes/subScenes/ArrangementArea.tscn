@@ -123,117 +123,6 @@ _data = {
 &"press": SubResource("Animation_btd2q")
 }
 
-[sub_resource type="Animation" id="Animation_04m8t"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [1]
-}
-
-[sub_resource type="Animation" id="Animation_5mwlg"]
-resource_name = "press"
-length = 0.4
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [1, 0]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_1j2kl"]
-_data = {
-&"RESET": SubResource("Animation_04m8t"),
-&"press": SubResource("Animation_5mwlg")
-}
-
-[sub_resource type="Animation" id="Animation_1j2kl"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../MediumSpeed:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-
-[sub_resource type="Animation" id="Animation_hd0mt"]
-resource_name = "press"
-length = 0.4
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../MediumSpeed:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [1, 0]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_niimp"]
-_data = {
-&"RESET": SubResource("Animation_1j2kl"),
-&"press": SubResource("Animation_hd0mt")
-}
-
-[sub_resource type="Animation" id="Animation_8bicm"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../HighSpeed:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [1]
-}
-
-[sub_resource type="Animation" id="Animation_frux3"]
-resource_name = "press"
-length = 0.4
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../HighSpeed:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [1, 0]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_qpxjs"]
-_data = {
-&"RESET": SubResource("Animation_8bicm"),
-&"press": SubResource("Animation_frux3")
-}
-
 [node name="ArrangementArea" type="Control" unique_id=2060967160]
 layout_mode = 3
 anchors_preset = 15
@@ -480,9 +369,6 @@ texture = ExtResource("9_2ol8w")
 vframes = 2
 frame = 1
 
-[node name="LowAnim" type="AnimationPlayer" parent="LowSpeed" unique_id=1200663987]
-libraries/ = SubResource("AnimationLibrary_1j2kl")
-
 [node name="LowSpeed" type="Button" parent="LowSpeed" unique_id=130014776]
 self_modulate = Color(1, 1, 1, 0)
 offset_left = -17.0
@@ -495,10 +381,6 @@ position = Vector2(160, 440)
 scale = Vector2(2, 2)
 texture = ExtResource("10_btd2q")
 vframes = 2
-
-[node name="MedAnim" type="AnimationPlayer" parent="MediumSpeed" unique_id=1350692615]
-root_node = NodePath("../../LowSpeed")
-libraries/ = SubResource("AnimationLibrary_niimp")
 
 [node name="MediumSpeed" type="Button" parent="MediumSpeed" unique_id=676933501]
 self_modulate = Color(1, 1, 1, 0)
@@ -513,10 +395,6 @@ scale = Vector2(2, 2)
 texture = ExtResource("11_04m8t")
 vframes = 2
 frame = 1
-
-[node name="HighAnim" type="AnimationPlayer" parent="HighSpeed" unique_id=1583006719]
-root_node = NodePath("../../LowSpeed")
-libraries/ = SubResource("AnimationLibrary_qpxjs")
 
 [node name="HighSpeed" type="Button" parent="HighSpeed" unique_id=1827896252]
 self_modulate = Color(1, 1, 1, 0)

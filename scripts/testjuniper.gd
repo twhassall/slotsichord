@@ -62,6 +62,7 @@ func audience_reaction():
 func _on_encore_pressed():
 	$EncoreButton/EncoreAnim.play("press")
 	emit_signal("encore_pressed")
+	MusicLibrary.play_button()
 	
 	for i in range(1, 8):
 		var patron = get_node("Audience" + str(i))
@@ -87,6 +88,7 @@ func _on_encore_pressed():
 func _on_play_again_pressed():
 	$PlayAgainButton/PlayAgainAnim.play("press")
 	emit_signal("play_again_pressed")
+	MusicLibrary.play_button()
 	
 	for i in range(1, 8):
 		var patron = get_node("Audience" + str(i))

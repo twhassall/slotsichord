@@ -105,6 +105,11 @@ func pan_back_to_start():
 	##makes chords transparent again
 	$SlotMachine.reset_chords()
 	
+	$ArrangementArea.set_bpm(120)
+	$ArrangementArea/LowSpeed.frame = 0
+	$ArrangementArea/MediumSpeed.frame = 1
+	$ArrangementArea/HighSpeed.frame = 0
+	
 	##moves the camera smoothly
 	var tween = create_tween()
 	tween.set_ease(Tween.EASE_IN_OUT)

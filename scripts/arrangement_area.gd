@@ -10,7 +10,11 @@ var slots = []
 signal perform_pressed
 
 func _ready():
-
+	
+	$LowSpeed.frame = 0
+	$MediumSpeed.frame = 1
+	$HighSpeed.frame = 0
+	
 	for line in lines_container.get_children():
 		var line_slots = []
 		for slot in line.get_children():
@@ -89,17 +93,23 @@ func _on_reset_pressed():
 func _on_low_speed_pressed():
 	MusicLibrary.play_button_two()
 	set_bpm(80)
-	$LowSpeed/LowAnim.play("press")
+	$LowSpeed.frame = 1
+	$MediumSpeed.frame = 0
+	$HighSpeed.frame = 0
 
 func _on_medium_speed_pressed():
 	MusicLibrary.play_button_two()
 	set_bpm(120)
-	$MediumSpeed/MedAnim.play("press")
+	$LowSpeed.frame = 0
+	$MediumSpeed.frame = 1
+	$HighSpeed.frame = 0
 
 func _on_high_speed_pressed():
 	MusicLibrary.play_button_two()
 	set_bpm(160)
-	$HighSpeed/HighAnim.play("press")
+	$LowSpeed.frame = 0
+	$MediumSpeed.frame = 0
+	$HighSpeed.frame = 1
 
 func set_bpm(speed):
 	MusicLibrary.bpm = speed
