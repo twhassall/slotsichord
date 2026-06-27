@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dtfsrppg6uquv" path="res://scripts/bar_slot.gd" id="1_2b17l"]
 [ext_resource type="Texture2D" uid="uid://ds434p6wisfms" path="res://assets/sprites/wholeRest.png" id="2_7auiu"]
+[ext_resource type="Texture2D" uid="uid://dkuno3ongpd7a" path="res://assets/sprites/barSlotOutline.png" id="3_c8517"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0xq38"]
 bg_color = Color(0, 0, 0, 0)
@@ -21,5 +22,9 @@ script = ExtResource("1_2b17l")
 [node name="Rest" type="Sprite2D" parent="." unique_id=1649063362]
 position = Vector2(53, 45)
 texture = ExtResource("2_7auiu")
+
+[node name="Highlight" type="Sprite2D" parent="." unique_id=1390499322]
+position = Vector2(53, 45)
+texture = ExtResource("3_c8517")
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
