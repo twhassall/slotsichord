@@ -8,9 +8,9 @@
 [ext_resource type="Texture2D" uid="uid://cm8xdbj5amfqs" path="res://assets/sprites/buttons/reset.png" id="5_bljxu"]
 [ext_resource type="Texture2D" uid="uid://b5pkastgx06lq" path="res://assets/sprites/buttons/perform.png" id="6_etmuu"]
 [ext_resource type="PackedScene" uid="uid://bmwscjo8qe6ix" path="res://scenes/subScenes/ChordBox.tscn" id="8_etmuu"]
-[ext_resource type="Texture2D" uid="uid://bduso0rljqvbe" path="res://assets/sprites/buttons/slow.png" id="9_2ol8w"]
-[ext_resource type="Texture2D" uid="uid://8wt074dbygjr" path="res://assets/sprites/buttons/med.png" id="10_btd2q"]
-[ext_resource type="Texture2D" uid="uid://bjc20xhixci0r" path="res://assets/sprites/buttons/fast.png" id="11_04m8t"]
+[ext_resource type="Texture2D" uid="uid://cma1wd577bwlj" path="res://assets/sprites/buttons/slow.png" id="9_2ol8w"]
+[ext_resource type="Texture2D" uid="uid://qtypyc41uqud" path="res://assets/sprites/buttons/med.png" id="10_btd2q"]
+[ext_resource type="Texture2D" uid="uid://ciqmjfvxjo7df" path="res://assets/sprites/buttons/fast.png" id="11_04m8t"]
 
 [sub_resource type="Animation" id="Animation_6jpjo"]
 length = 0.06666667
@@ -140,7 +140,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_5mwlg"]
 resource_name = "press"
-length = 0.39999999999999997
+length = 0.4
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -177,7 +177,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_hd0mt"]
 resource_name = "press"
-length = 0.39999999999999997
+length = 0.4
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -214,7 +214,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_frux3"]
 resource_name = "press"
-length = 0.39999999999999997
+length = 0.4
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -474,8 +474,7 @@ position = Vector2(241, 336)
 position = Vector2(359, 336)
 
 [node name="LowSpeed" type="Sprite2D" parent="." unique_id=100270160]
-position = Vector2(69, 438)
-scale = Vector2(2, 2)
+position = Vector2(83, 448)
 texture = ExtResource("9_2ol8w")
 vframes = 2
 frame = 1
@@ -486,13 +485,12 @@ libraries/ = SubResource("AnimationLibrary_1j2kl")
 [node name="LowSpeed" type="Button" parent="LowSpeed" unique_id=130014776]
 self_modulate = Color(1, 1, 1, 0)
 offset_left = -17.0
-offset_top = -11.5
-offset_right = 18.5
-offset_bottom = 11.5
+offset_top = -7.0
+offset_right = 19.0
+offset_bottom = 13.5
 
 [node name="MediumSpeed" type="Sprite2D" parent="." unique_id=1834600036]
 position = Vector2(196, 448)
-scale = Vector2(2, 2)
 texture = ExtResource("10_btd2q")
 vframes = 2
 
@@ -503,13 +501,12 @@ libraries/ = SubResource("AnimationLibrary_niimp")
 [node name="MediumSpeed" type="Button" parent="MediumSpeed" unique_id=676933501]
 self_modulate = Color(1, 1, 1, 0)
 offset_left = -17.5
-offset_top = -10.5
+offset_top = -11.5
 offset_right = 19.5
-offset_bottom = 11.0
+offset_bottom = 10.0
 
 [node name="HighSpeed" type="Sprite2D" parent="." unique_id=131521875]
 position = Vector2(342, 439)
-scale = Vector2(2, 2)
 texture = ExtResource("11_04m8t")
 vframes = 2
 frame = 1
@@ -521,9 +518,9 @@ libraries/ = SubResource("AnimationLibrary_qpxjs")
 [node name="HighSpeed" type="Button" parent="HighSpeed" unique_id=1827896252]
 self_modulate = Color(1, 1, 1, 0)
 offset_left = -18.0
-offset_top = -11.0
+offset_top = -8.0
 offset_right = 19.5
-offset_bottom = 11.5
+offset_bottom = 14.5
 
 [connection signal="pressed" from="PreviewButton/Preview" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="ResetButton/Reset" to="." method="_on_reset_pressed"]
