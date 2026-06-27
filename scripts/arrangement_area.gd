@@ -43,16 +43,23 @@ func play_all_bars():
 		var bit = all_slots[index]
 		if not bit.get_bar_data().is_empty() or bit.current_chord != "":
 			last_index = index
+			
+	var first_index = -1
+	for index in range(all_slots.size()):
+		var bit = all_slots[index]
+		if not bit.get_bar_data().is_empty() or bit.current_chord != "":
+			first_index = index
+			break  
 
 	#play p to the end (+1 as arrays start at 0)
-	for i in range(last_index + 1):
+	#also skip empty bars at the start
+	for i in range(first_index, last_index + 1):
+		
 		var bit = all_slots[i]
 		var bar = bit.get_bar_data()
 		var chord = bit.current_chord
-
 		if chord != "":
 			MusicLibrary.play_chord(chord)
-
 		if bar.is_empty():
 			await get_tree().create_timer(MusicLibrary.beat_duration() * 4).timeout
 		else:
