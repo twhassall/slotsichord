@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://g7nmx3jsyfp4"]
 
 [ext_resource type="Script" uid="uid://b3n7u1kht32pk" path="res://scripts/arrangement_area.gd" id="1_t53rw"]
+[ext_resource type="FontFile" uid="uid://busiwpfvy1aeh" path="res://assets/VCR_OSD_MONO_1.001.ttf" id="2_btd2q"]
 [ext_resource type="Texture2D" uid="uid://cs57381my41cr" path="res://assets/sprites/sheet music ONE LINE.png" id="2_etmuu"]
 [ext_resource type="Texture2D" uid="uid://b31v6x8fljhs0" path="res://assets/sprites/trebleclef.png" id="3_6oaw7"]
 [ext_resource type="PackedScene" uid="uid://but188dhkcmpn" path="res://scenes/subScenes/BarSlot.tscn" id="3_o8ntw"]
@@ -131,6 +132,23 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_t53rw")
+
+[node name="Instructions" type="TextEdit" parent="." unique_id=270379518]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 28.0
+offset_top = 400.0
+offset_right = 378.0
+offset_bottom = 700.0
+theme_override_colors/current_line_color = Color(0.2509804, 0.2509804, 0.25882354, 0)
+theme_override_fonts/font = ExtResource("2_btd2q")
+text = "Pull the lever to create a bar of 
+music
+
+Drag bars and chords from the
+slot machine onto the lines 
+above."
 
 [node name="Manuscript" type="Sprite2D" parent="." unique_id=1041215718]
 position = Vector2(234, 30)
@@ -363,7 +381,7 @@ position = Vector2(241, 336)
 position = Vector2(359, 336)
 
 [node name="LowSpeed" type="Sprite2D" parent="." unique_id=100270160]
-position = Vector2(80, 440)
+position = Vector2(406, 506)
 scale = Vector2(2, 2)
 texture = ExtResource("9_2ol8w")
 vframes = 2
@@ -377,7 +395,7 @@ offset_right = 19.0
 offset_bottom = 13.5
 
 [node name="MediumSpeed" type="Sprite2D" parent="." unique_id=1834600036]
-position = Vector2(160, 440)
+position = Vector2(406, 464)
 scale = Vector2(2, 2)
 texture = ExtResource("10_btd2q")
 vframes = 2
@@ -390,7 +408,7 @@ offset_right = 19.5
 offset_bottom = 10.0
 
 [node name="HighSpeed" type="Sprite2D" parent="." unique_id=131521875]
-position = Vector2(240, 440)
+position = Vector2(406, 419)
 scale = Vector2(2, 2)
 texture = ExtResource("11_04m8t")
 vframes = 2
