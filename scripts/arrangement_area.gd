@@ -88,16 +88,17 @@ func _on_reset_pressed():
 func _on_low_speed_pressed():
 	MusicLibrary.play_button_two()
 	set_bpm(80)
-
+	$HighSpeed/HighAnim.play("press")
 
 func _on_medium_speed_pressed():
 	MusicLibrary.play_button_two()
 	set_bpm(120)
-
+	$MediumSpeed/MedAnim.play("press")
 
 func _on_high_speed_pressed():
 	MusicLibrary.play_button_two()
 	set_bpm(160)
+	$HighSpeed/HighAnim.play("press")
 
 func set_bpm(speed):
 	MusicLibrary.bpm = speed

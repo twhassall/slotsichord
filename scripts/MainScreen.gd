@@ -89,6 +89,8 @@ func on_play_again():
 	$ArrangementArea.clear_all_bars()
 	%SlotMachine.reset_slotmachine()
 	pan_back_to_start()
+	$TuneUp.volume_db = -15.0
+	$Chatter.volume_db = -15.0
 	
 func pan_back_to_start():	
 	
@@ -100,6 +102,8 @@ func pan_back_to_start():
 	fade_out.tween_property($JuniperNode/EncoreButton, "modulate:a", 0.0, 0.5)
 	fade_out.parallel().tween_property($JuniperNode/PlayAgainButton, "modulate:a", 0.0, 0.5)
 	
+	##makes chords transparent again
+	$SlotMachine.reset_chords()
 	
 	##moves the camera smoothly
 	var tween = create_tween()

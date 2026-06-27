@@ -11,6 +11,7 @@ var current_bar = []
 var spinSound
 var player: AudioStreamPlayer
 var spinNum
+var chords_shown = false
 
 signal coin_inserted
 
@@ -18,6 +19,8 @@ func _ready():
 	##for random smoke animation
 	randomize()
 	smoke_loop()
+	
+	$Chords.modulate.a = 0.0
 	
 	spinNum = 0
 	$SpinsLeft.frame = 0
@@ -126,9 +129,17 @@ func _on_spin_pressed():
 	$spinSound.play()
 	await get_tree().create_timer(0.3).timeout
 	await spin_all_reels(current_bar)
+	if spinNum <= 8 and not chords_shown:
+		chords_shown = true
+		var fade_in = create_tween()
+		fade_in.set_ease(Tween.EASE_IN_OUT)
+		fade_in.set_trans(Tween.TRANS_SINE)
+		fade_in.tween_property($Chords, "modulate:a", 1.0, 3.0)
 	await get_tree().create_timer(0.5).timeout
 	await MusicLibrary.play_bar(current_bar)
 	print (current_bar)
+	
+
 	
 	is_spinning = false
 	
@@ -144,6 +155,13 @@ func render_bar(bar):
 	barOuputarea.add_child(bar_node)
 	bar_node.set_textures(sprites)
 	bar_node.set_bar(bar)
+	
+	bar_node.modulate.a = 0.0
+	var fade_in = bar_node.create_tween()
+	fade_in.set_ease(Tween.EASE_IN_OUT)
+	fade_in.set_trans(Tween.TRANS_SINE)
+	fade_in.tween_property(bar_node, "modulate:a", 1.0, 1.5)
+	
 	
 func smoke_loop():
 	while true:
@@ -174,4 +192,8 @@ func _on_insert_coin_pressed():
 	await get_tree().create_timer(1.2).timeout
 	start_slotmachine()
 	emit_signal("coin_inserted")
+	
+func reset_chords():
+	chords_shown = false
+	$Chords.modulate.a = 0.0
 	

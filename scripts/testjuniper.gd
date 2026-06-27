@@ -87,6 +87,27 @@ func _on_encore_pressed():
 func _on_play_again_pressed():
 	$PlayAgainButton/PlayAgainAnim.play("press")
 	emit_signal("play_again_pressed")
+	
+	for i in range(1, 8):
+		var patron = get_node("Audience" + str(i))
+		patron.stop_cheering(1.0)
+	
+	##fade out sounds
+	var fade = create_tween()
+	fade.set_ease(Tween.EASE_IN_OUT)
+	fade.set_trans(Tween.TRANS_SINE)
+	fade.tween_property($cheerSound, "volume_db", -80.0, 2.0)
+	fade.parallel().tween_property($clapSound, "volume_db", -80.0, 2.0)
+	fade.parallel().tween_property($cricketSound, "volume_db", -80.0, 2.0)
+	
+	await fade.finished
+	
+	$cheerSound.stop()
+	$clapSound.stop()
+	$cricketSound.stop()
+	$cheerSound.volume_db = 0.0
+	$clapSound.volume_db = 0.0
+	$cricketSound.volume_db = 0.0
 
 	
 func set_buttons_disabled(is_disabled):
