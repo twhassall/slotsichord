@@ -2,6 +2,12 @@ extends PanelContainer
 var current_chord = ""
 @export var chord_box: Node2D
 
+@onready var highlight = $Highlight
+var dragtween: Tween
+
+func _ready():
+	highlight.visible = false
+
 #slots accet the drop
 func _can_drop_data(at_position, data):
 	#print("can drop here?", data.get("type"))
@@ -81,3 +87,27 @@ func set_rest_visible(visible):
 		$Rest.modulate.a = 256.0
 	else:
 		$Rest.modulate.a = 0.0
+		
+func _notification(draghappening):
+	if draghappening == NOTIFICATION_DRAG_BEGIN:
+		highlight.visible = true
+		_start_pulse()
+	elif draghappening == NOTIFICATION_DRAG_END:
+		highlight.visible = false
+		_stop_pulse()
+		
+func _start_pulse():
+	print("pulseing")
+	highlight.visible = true
+	highlight.modulate.a = 0.15  
+	dragtween = create_tween()
+	dragtween.set_loops()
+	dragtween.set_trans(Tween.TRANS_SINE)
+	dragtween.set_ease(Tween.EASE_IN_OUT)
+	dragtween.tween_property(highlight, "modulate:a", 0.3, 0.8)
+	dragtween.tween_property(highlight, "modulate:a", 0.15, 0.8)
+
+func _stop_pulse():
+	if dragtween:
+		dragtween.kill()
+	highlight.visible = false
