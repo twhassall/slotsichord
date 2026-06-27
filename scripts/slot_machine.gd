@@ -189,7 +189,10 @@ func _on_insert_coin_pressed():
 	$SlotMachine/InsertCoinButton/InsertCoinAnimation.play("press")
 	$Funnel/CoinDrop.play("drop")
 	$SlotMachine/InsertCoinButton/InsertCoin.disabled = true
-	await get_tree().create_timer(1.2).timeout
+	$airDrop.play()
+	await get_tree().create_timer(1).timeout
+	$coinHit.play()
+	await get_tree().create_timer(0.2).timeout
 	start_slotmachine()
 	emit_signal("coin_inserted")
 	
