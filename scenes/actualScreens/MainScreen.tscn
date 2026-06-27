@@ -19,7 +19,7 @@ position = Vector2(124, 324)
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=270515992]
 layout_mode = 0
-offset_left = -488.0
+offset_left = -698.0
 offset_top = -18.0
 offset_right = 2008.0
 offset_bottom = 805.0

@@ -144,11 +144,11 @@ offset_bottom = 700.0
 theme_override_colors/current_line_color = Color(0.2509804, 0.2509804, 0.25882354, 0)
 theme_override_fonts/font = ExtResource("2_btd2q")
 text = "Pull the lever to create a bar of 
-music
+music.
 
-Drag bars and chords from the
-slot machine onto the lines 
-above."
+Drag bars and chords from below 
+the slot machine  and onto the 
+lines above."
 
 [node name="Manuscript" type="Sprite2D" parent="." unique_id=1041215718]
 position = Vector2(234, 30)
@@ -381,7 +381,7 @@ position = Vector2(241, 336)
 position = Vector2(359, 336)
 
 [node name="LowSpeed" type="Sprite2D" parent="." unique_id=100270160]
-position = Vector2(406, 506)
+position = Vector2(406, 499)
 scale = Vector2(2, 2)
 texture = ExtResource("9_2ol8w")
 vframes = 2
@@ -390,12 +390,13 @@ frame = 1
 [node name="LowSpeed" type="Button" parent="LowSpeed" unique_id=130014776]
 self_modulate = Color(1, 1, 1, 0)
 offset_left = -17.0
-offset_top = -7.0
+offset_top = -7.5
 offset_right = 19.0
-offset_bottom = 13.5
+offset_bottom = 13.0
+metadata/_edit_use_anchors_ = true
 
 [node name="MediumSpeed" type="Sprite2D" parent="." unique_id=1834600036]
-position = Vector2(406, 464)
+position = Vector2(406, 457)
 scale = Vector2(2, 2)
 texture = ExtResource("10_btd2q")
 vframes = 2
@@ -403,12 +404,12 @@ vframes = 2
 [node name="MediumSpeed" type="Button" parent="MediumSpeed" unique_id=676933501]
 self_modulate = Color(1, 1, 1, 0)
 offset_left = -17.5
-offset_top = -11.5
+offset_top = -8.5
 offset_right = 19.5
-offset_bottom = 10.0
+offset_bottom = 13.0
 
 [node name="HighSpeed" type="Sprite2D" parent="." unique_id=131521875]
-position = Vector2(406, 419)
+position = Vector2(406, 412)
 scale = Vector2(2, 2)
 texture = ExtResource("11_04m8t")
 vframes = 2
@@ -417,9 +418,9 @@ frame = 1
 [node name="HighSpeed" type="Button" parent="HighSpeed" unique_id=1827896252]
 self_modulate = Color(1, 1, 1, 0)
 offset_left = -18.0
-offset_top = -8.0
+offset_top = -9.5
 offset_right = 19.5
-offset_bottom = 14.5
+offset_bottom = 13.0
 
 [connection signal="pressed" from="PreviewButton/Preview" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="ResetButton/Reset" to="." method="_on_reset_pressed"]
