@@ -430,15 +430,15 @@ libraries/ = SubResource("AnimationLibrary_7t2ew")
 
 [node name="Reel1" type="TextureRect" parent="." unique_id=1036060400]
 layout_mode = 0
-offset_left = 75.0
-offset_top = 171.0
-offset_right = 185.0
-offset_bottom = 330.0
+offset_left = 76.0
+offset_top = 173.0
+offset_right = 186.0
+offset_bottom = 332.0
 
 [node name="Blur1" type="Sprite2D" parent="Reel1" unique_id=770599060]
 visible = false
-position = Vector2(54, 78.5)
-scale = Vector2(4.25, 4.25)
+position = Vector2(54, 78)
+scale = Vector2(4.2, 4.2)
 texture = ExtResource("5_pt82j")
 hframes = 3
 
@@ -448,16 +448,16 @@ libraries/ = SubResource("AnimationLibrary_pn73r")
 
 [node name="Reel2" type="TextureRect" parent="." unique_id=58768783]
 layout_mode = 0
-offset_left = 190.0
-offset_top = 171.0
-offset_right = 300.0
-offset_bottom = 330.0
+offset_left = 192.0
+offset_top = 173.0
+offset_right = 302.0
+offset_bottom = 332.0
 
 [node name="Blur2" type="Sprite2D" parent="Reel2" unique_id=1553310928]
 visible = false
-position = Vector2(56, 78.5)
+position = Vector2(56, 80.5)
 rotation = -3.1412141
-scale = Vector2(4.25, 4.25)
+scale = Vector2(4.2, 4.2)
 texture = ExtResource("5_pt82j")
 hframes = 3
 frame = 1
@@ -467,15 +467,15 @@ libraries/ = SubResource("AnimationLibrary_plc8i")
 
 [node name="Reel3" type="TextureRect" parent="." unique_id=1011471942]
 layout_mode = 0
-offset_left = 305.0
-offset_top = 171.0
-offset_right = 415.0
-offset_bottom = 330.0
+offset_left = 307.0
+offset_top = 173.0
+offset_right = 417.0
+offset_bottom = 332.0
 
 [node name="Blur3" type="Sprite2D" parent="Reel3" unique_id=1422707837]
 visible = false
-position = Vector2(54, 78.5)
-scale = Vector2(4.25, 4.25)
+position = Vector2(54, 78)
+scale = Vector2(4.2, 4.2)
 texture = ExtResource("5_pt82j")
 hframes = 3
 
@@ -484,16 +484,16 @@ libraries/ = SubResource("AnimationLibrary_084gh")
 
 [node name="Reel4" type="TextureRect" parent="." unique_id=1294516516]
 layout_mode = 0
-offset_left = 420.0
-offset_top = 171.5
-offset_right = 530.0
-offset_bottom = 330.5
+offset_left = 421.0
+offset_top = 173.0
+offset_right = 531.0
+offset_bottom = 332.0
 
 [node name="Blur4" type="Sprite2D" parent="Reel4" unique_id=1183149560]
 visible = false
-position = Vector2(56, 77.5)
+position = Vector2(56, 80.5)
 rotation = 3.1415927
-scale = Vector2(4.25, 4.25)
+scale = Vector2(4.2, 4.2)
 texture = ExtResource("5_pt82j")
 hframes = 3
 frame = 1
@@ -511,10 +511,10 @@ stream = ExtResource("6_degk7")
 [node name="Spin" type="Button" parent="." unique_id=2136534447]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 0
-offset_left = 539.0
-offset_top = 60.0
-offset_right = 640.0
-offset_bottom = 471.0
+offset_left = 532.0
+offset_top = 26.0
+offset_right = 662.0
+offset_bottom = 484.0
 
 [node name="BarOutputArea" type="HFlowContainer" parent="." unique_id=498840211]
 layout_mode = 0

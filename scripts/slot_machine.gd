@@ -41,27 +41,54 @@ func _ready():
 func random_sprite_key():
 	return MusicLibrary.beat_sprites.keys().pick_random()
 	
-func start_spin_reel(reel):
+func start_spin_reel(reel, stop_time: float):
+	var elapsed = 0.0
+	var ease_in_duration = 0.4
+	var brake_duration = 1.0
+	
 	while reel.get_meta("spinning") == true:
 		reel.texture = MusicLibrary.beat_sprites[random_sprite_key()]
-		await get_tree().create_timer(0.05).timeout
-
-func stop_spin_reel(reel, final_key):
-	reel.set_meta("spinning", false)
-	reel.texture = MusicLibrary.beat_sprites[final_key]
+		
+		var time_left = stop_time - elapsed
+		
+		var delay: float
+		if elapsed < ease_in_duration:
+			var t = elapsed / ease_in_duration
+			delay = lerp(0.15, 0.03, t * t)
+		elif time_left > brake_duration:
+			delay = 0.03
+		else:
+			var t = 1.0 - clamp(time_left / brake_duration, 0.0, 1.0)
+			delay = lerp(0.03, 0.15, t)
+		
+		elapsed += delay
+		await get_tree().create_timer(delay).timeout
+		
+func _set_blur(reel, visible:bool):
 	##blurs stop animating and vanish
 	if reel == reel1:
-		$Reel1/Blur1.visible = false
-		$Reel1/Blur1/BlurAnimation1.stop()
+		$Reel1/Blur1.visible = visible
+		if visible: $Reel1/Blur1/BlurAnimation1.play("blur1")
+		else: $Reel1/Blur1/BlurAnimation1.stop()
 	elif reel == reel2:
-		$Reel2/Blur2.visible = false
-		$Reel2/Blur2/BlurAnimation2.stop()
+		$Reel2/Blur2.visible = visible
+		if visible: $Reel2/Blur2/BlurAnimation2.play("blur2")
+		else: $Reel2/Blur2/BlurAnimation2.stop()
 	elif reel == reel3:
-		$Reel3/Blur3.visible = false
-		$Reel3/Blur3/BlurAnimation3.stop()
+		$Reel3/Blur3.visible = visible
+		if visible: $Reel3/Blur3/BlurAnimation3.play("blur3")
+		else: $Reel3/Blur3/BlurAnimation3.stop()
 	elif reel == reel4:
-		$Reel4/Blur4.visible = false
-		$Reel4/Blur4/BlurAnimation4.stop()
+		$Reel4/Blur4.visible = visible
+		if visible: $Reel4/Blur4/BlurAnimation4.play("blur4")
+		else: $Reel4/Blur4/BlurAnimation4.stop()
+	
+
+func stop_spin_reel(reel, final_key):
+	_set_blur(reel, false)
+	reel.set_meta("spinning", false)
+	reel.texture = MusicLibrary.beat_sprites[final_key]
+	if reel == reel4:
 		await get_tree().create_timer(0.1).timeout
 		$spinSound.stop()
 	
@@ -71,28 +98,28 @@ func start_all_reels():
 	reel2.set_meta("spinning", true)
 	reel3.set_meta("spinning", true)
 	reel4.set_meta("spinning", true)
-	##blurs appear and animate
-	$Reel1/Blur1.visible = true
-	$Reel2/Blur2.visible = true
-	$Reel3/Blur3.visible = true
-	$Reel4/Blur4.visible = true
-	$Reel1/Blur1/BlurAnimation1.play("blur1")
-	$Reel2/Blur2/BlurAnimation2.play("blur2")
-	$Reel3/Blur3/BlurAnimation3.play("blur3")
-	$Reel4/Blur4/BlurAnimation4.play("blur4")
+
 	
-	start_spin_reel(reel1)
-	start_spin_reel(reel2)
-	start_spin_reel(reel3)
-	start_spin_reel(reel4)
+	start_spin_reel(reel1, 1.4)
+	await get_tree().create_timer(0.08).timeout
+	start_spin_reel(reel2, 1.4 + 0.4 - 0.08)
+	await get_tree().create_timer(0.08).timeout
+	start_spin_reel(reel3, 1.4 + 0.8 - 0.16)
+	await get_tree().create_timer(0.08).timeout
+	start_spin_reel(reel4, 1.4 + 1.2 - 0.24)
 
 func spin_all_reels(bar):
 	var key1 = MusicLibrary.beat_to_key(bar[0])
 	var key2 = MusicLibrary.beat_to_key(bar[1])
 	var key3 = MusicLibrary.beat_to_key(bar[2])
 	var key4 = MusicLibrary.beat_to_key(bar[3])
-
+	
 	start_all_reels()
+	
+	_timed_blur(reel1, 0.4,  1.2)
+	_timed_blur(reel2, 0.48, 1.8)
+	_timed_blur(reel3, 0.56, 2.6)
+	_timed_blur(reel4, 0.64, 3.8)
 
 	await get_tree().create_timer(1.4).timeout
 	stop_spin_reel(reel1, key1)
@@ -199,4 +226,10 @@ func _on_insert_coin_pressed():
 func reset_chords():
 	chords_shown = false
 	$Chords.modulate.a = 0.0
+	
+func _timed_blur(reel, start_after: float, stop_after: float):
+	await get_tree().create_timer(start_after).timeout
+	_set_blur(reel, true)
+	await get_tree().create_timer(stop_after - start_after).timeout
+	_set_blur(reel, false)
 	
