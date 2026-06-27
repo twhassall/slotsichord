@@ -156,6 +156,7 @@ func _on_spin_pressed():
 	$spinSound.play()
 	await get_tree().create_timer(0.3).timeout
 	await spin_all_reels(current_bar)
+	is_spinning = false
 	if spinNum <= 8 and not chords_shown:
 		chords_shown = true
 		var fade_in = create_tween()
@@ -165,10 +166,6 @@ func _on_spin_pressed():
 	await get_tree().create_timer(0.5).timeout
 	await MusicLibrary.play_bar(current_bar)
 	print (current_bar)
-	
-
-	
-	is_spinning = false
 	
 	spinNum -= 1
 	if spinNum == 0:
