@@ -14,7 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://dhy65l2bmbt47" path="res://assets/sprites/slotmachine/spinsleft2.png" id="13_j3jed"]
 [ext_resource type="Texture2D" uid="uid://dta3auog2yldt" path="res://assets/sprites/chords/minor.png" id="13_wx471"]
 [ext_resource type="FontFile" uid="uid://busiwpfvy1aeh" path="res://assets/VCR_OSD_MONO_1.001.ttf" id="14_j3jed"]
-[ext_resource type="AudioStream" uid="uid://b08ruog5ul6e6" path="res://assets/sounds/slotMachine/airDrop.mp3" id="15_k1jfg"]
+[ext_resource type="AudioStream" uid="uid://be217i3u2h2ge" path="res://assets/sounds/slotMachine/airDrop.wav" id="15_k1jfg"]
 [ext_resource type="AudioStream" uid="uid://cen4578ssdw" path="res://assets/sounds/slotMachine/coinHit.mp3" id="16_0w3hv"]
 
 [sub_resource type="Animation" id="Animation_0xq38"]
@@ -628,9 +628,11 @@ vframes = 3
 
 [node name="airDrop" type="AudioStreamPlayer" parent="." unique_id=1674798414]
 stream = ExtResource("15_k1jfg")
+volume_db = -15.967
 
 [node name="coinHit" type="AudioStreamPlayer" parent="." unique_id=1687156749]
 stream = ExtResource("16_0w3hv")
+volume_db = -15.535
 
 [connection signal="pressed" from="SlotMachine/InsertCoinButton/InsertCoin" to="." method="_on_insert_coin_pressed"]
 [connection signal="pressed" from="Spin" to="." method="_on_spin_pressed"]
